@@ -1,6 +1,12 @@
 ### vepro_app
 
-Vepro Application
+Diese App wurde für VEPRO geschrieben. 
+Sie dienst als Ergänzung zu ERPNext 15 und soll alle UI Veränderungen am System beinhalten. 
+
+Die drei wichtigsten Branches sind: 
+main:      Hier findet man den komplett durchgetesteten und funktionierenden Code.
+staging:   Code der durch SUT getestet wurde. Es muss noch durch VEPPRO selbst zur Migration in den Main-Branch freigegeben werden.
+develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature Branch.
 
 ### Installation
 
