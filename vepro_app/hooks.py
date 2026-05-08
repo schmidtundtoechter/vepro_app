@@ -5,6 +5,25 @@ app_description = "Vepro Application"
 app_email = "kontakt@schmidtundtoechter.com"
 app_license = "mit"
 
+fixtures = [
+	# Benutzerdefinierte Felder für den Doctype "Customer" (Kunde)
+	{
+		"dt": "Custom Field",
+		"filters": [
+			["dt", "=", "Customer"],
+			["fieldname", "in", ["custom_section_break_8lhrp", "custom_produkte"]],
+		],
+	},
+	# Benutzerdefinierte Felder für den Doctype "Contact" (Kontakt)
+	{
+		"dt": "Custom Field",
+		"filters": [
+			["dt", "=", "Contact"],
+			["fieldname", "in", ["custom_ort", "custom_abteilung", "custom_bemerkungen"]],
+		],
+	},
+]
+
 # Apps
 # ------------------
 
