@@ -6,20 +6,18 @@ app_email = "kontakt@schmidtundtoechter.com"
 app_license = "mit"
 
 fixtures = [
-	# Benutzerdefinierte Felder für den Doctype "Customer" (Kunde)
+	# Benutzerdefinierte Felder für Customer und Contact
 	{
 		"dt": "Custom Field",
 		"filters": [
-			["dt", "=", "Customer"],
-			["fieldname", "in", ["custom_section_break_8lhrp", "custom_produkte", "custom_supportvertrag"]],
-		],
-	},
-	# Benutzerdefinierte Felder für den Doctype "Contact" (Kontakt)
-	{
-		"dt": "Custom Field",
-		"filters": [
-			["dt", "=", "Contact"],
-			["fieldname", "in", ["custom_ort", "custom_abteilung", "custom_bemerkungen"]],
+			["fieldname", "in", [
+				"custom_section_break_8lhrp",
+				"custom_produkte",
+				"custom_supportvertrag",
+				"custom_ort",
+				"custom_abteilung",
+				"custom_bemerkungen",
+			]],
 		],
 	},
 ]
