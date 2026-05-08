@@ -11,7 +11,7 @@ fixtures = [
 		"dt": "Custom Field",
 		"filters": [
 			["dt", "=", "Customer"],
-			["fieldname", "in", ["custom_section_break_8lhrp", "custom_produkte"]],
+			["fieldname", "in", ["custom_section_break_8lhrp", "custom_produkte", "custom_supportvertrag"]],
 		],
 	},
 	# Benutzerdefinierte Felder für den Doctype "Contact" (Kontakt)
