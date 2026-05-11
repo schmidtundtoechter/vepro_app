@@ -35,6 +35,25 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | `custom_abteilung` | Link → `Abteilungstyp` | Zeile 11 | Abteilung des Kontakts |
 | `custom_bemerkungen` | Data | Zeile 21 | Freitext-Bemerkungen |
 
+#### Workspace
+
+| Name | Beschreibung |
+|---|---|
+| `VEPRO` | Eigener Workspace im Frappe Desk; Icon `color-review-points`; enthält Schnellzugriff-Shortcuts und eine Karte „Stammdaten" mit Links zu den DocTypes `Kunde` und `Kontakt` |
+
+---
+
+### Changelog
+
+| Version | Datum | Änderungen |
+|---|---|---|
+| `0.0.6` | 2026-05-11 | Workspace VEPRO mit Shortcuts und Karte „Stammdaten" (Links zu Kunde und Kontakt) befüllt |
+| `0.0.5` | 2026-05-08 | Versionsbump |
+| `0.0.4` | 2026-05-08 | Workspace VEPRO angelegt (leer); Icon auf `color-review-points` gesetzt |
+| `0.0.3` | 2026-05-08 | Alle Custom Fields in einer Fixture zusammengefasst (`Customer` + `Contact`) |
+| `0.0.2` | 2026-05-08 | Custom Field `custom_supportvertrag` im DocType `Customer` hinzugefügt; README erweitert |
+| `0.0.1` | 2026-05-08 | Custom Fields für `Customer` und `Contact`; neue DocTypes `Abteilungstyp` und `Produkte` |
+
 ---
 
 ### Installation
