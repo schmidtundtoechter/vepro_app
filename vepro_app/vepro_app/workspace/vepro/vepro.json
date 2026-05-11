@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[]",
+ "content": "[{\"id\":\"vepro_h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Schnellzugriff</b></span>\",\"col\":12}},{\"id\":\"vepro_s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Kunde\",\"col\":3}},{\"id\":\"vepro_s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Kontakt\",\"col\":3}},{\"id\":\"vepro_sp1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vepro_c1\",\"type\":\"card\",\"data\":{\"card_name\":\"Stammdaten\",\"col\":4}}]",
  "creation": "2026-05-08 14:47:10.728374",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,9 +12,40 @@
  "indicator_color": "",
  "is_hidden": 0,
  "label": "VEPRO",
- "links": [],
- "modified": "2026-05-08 14:57:33.857837",
- "modified_by": "l.maeurer@schmidtundtoechter.com",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stammdaten",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Kunde",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Kontakt",
+   "link_count": 0,
+   "link_to": "Contact",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-11 08:10:00.000000",
+ "modified_by": "Administrator",
  "module": "vepro_app",
  "name": "VEPRO",
  "number_cards": [],
@@ -24,6 +55,17 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 1.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "label": "Kunde",
+   "link_to": "Customer",
+   "type": "DocType"
+  },
+  {
+   "label": "Kontakt",
+   "link_to": "Contact",
+   "type": "DocType"
+  }
+ ],
  "title": "VEPRO"
 }
