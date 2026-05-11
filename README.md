@@ -25,7 +25,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 |---|---|---|---|
 | `custom_section_break_8lhrp` | Section Break | nach `image` | Abschnittswechsel „Produkttabelle" |
 | `custom_produkte` | Table → `Produkte` | nach Abschnittswechsel | Tabelle mit verlinkten Produkten und Bemerkungen |
-| `custom_supportvertrag` | Data | nach `customer_group` | Freitextfeld für den Supportvertrag |
+| `custom_supportvertrag` | Select | nach `customer_group` | Auswahlfeld für den Supportvertrag (`24/7`, `+3h`, `Standard`, `kein Supportvertrag`) |
 
 **DocType: Kontakt (`Contact`)**
 
@@ -47,6 +47,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.8` | 2026-05-11 | `custom_supportvertrag` von `Data` auf `Select` geändert; Optionen: `24/7`, `+3h`, `Standard`, `kein Supportvertrag` |
 | `0.0.7` | 2026-05-11 | Workspace VEPRO: Schnellzugriffe für `Adresse`, `Mitarbeiter`, `Lead` und `Projekt` ergänzt; Karte „Stammdaten" entfernt |
 | `0.0.6` | 2026-05-11 | Workspace VEPRO mit Shortcuts (`Kunde`, `Kontakt`) und Karte „Stammdaten" befüllt |
 | `0.0.5` | 2026-05-08 | Versionsbump |
