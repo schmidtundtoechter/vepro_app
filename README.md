@@ -39,7 +39,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Name | Beschreibung |
 |---|---|
-| `VEPRO` | Eigener Workspace im Frappe Desk; Icon `color-review-points`; enthält Schnellzugriff-Shortcuts und eine Karte „Stammdaten" mit Links zu den DocTypes `Kunde` und `Kontakt` |
+| `VEPRO` | Eigener Workspace im Frappe Desk; Icon `color-review-points`; enthält Schnellzugriff-Shortcuts für `Kunde`, `Kontakt`, `Adresse`, `Mitarbeiter`, `Lead` und `Projekt` |
 
 ---
 
@@ -47,7 +47,8 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
-| `0.0.6` | 2026-05-11 | Workspace VEPRO mit Shortcuts und Karte „Stammdaten" (Links zu Kunde und Kontakt) befüllt |
+| `0.0.7` | 2026-05-11 | Workspace VEPRO: Schnellzugriffe für `Adresse`, `Mitarbeiter`, `Lead` und `Projekt` ergänzt; Karte „Stammdaten" entfernt |
+| `0.0.6` | 2026-05-11 | Workspace VEPRO mit Shortcuts (`Kunde`, `Kontakt`) und Karte „Stammdaten" befüllt |
 | `0.0.5` | 2026-05-08 | Versionsbump |
 | `0.0.4` | 2026-05-08 | Workspace VEPRO angelegt (leer); Icon auf `color-review-points` gesetzt |
 | `0.0.3` | 2026-05-08 | Alle Custom Fields in einer Fixture zusammengefasst (`Customer` + `Contact`) |
