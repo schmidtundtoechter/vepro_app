@@ -20,6 +20,13 @@ fixtures = [
 			]],
 		],
 	},
+	# Supportvertrag-Stammdaten
+	{
+		"dt": "Supportvertrag",
+		"filters": [
+			["name", "in", ["24/7", "+3h", "Standard", "kein Supportvertrag"]],
+		],
+	},
 ]
 
 # Apps

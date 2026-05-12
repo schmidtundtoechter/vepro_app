@@ -16,6 +16,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 |---|---|---|
 | `Produkte` | Child Table | Produktliste; wird im DocType „Kunde" als Tabelle eingebettet |
 | `Abteilungstyp` | Stammdaten | Auswahlliste für Abteilungen; wird im DocType „Kontakt" als Link-Feld verwendet |
+| `Supportvertrag` | Stammdaten | Supportvertrags-Typen (`24/7`, `+3h`, `Standard`, `kein Supportvertrag`); wird im DocType „Kunde" als Link-Feld verwendet |
 
 #### Custom Fields
 
@@ -25,7 +26,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 |---|---|---|---|
 | `custom_section_break_8lhrp` | Section Break | nach `image` | Abschnittswechsel „Produkttabelle" |
 | `custom_produkte` | Table → `Produkte` | nach Abschnittswechsel | Tabelle mit verlinkten Produkten und Bemerkungen |
-| `custom_supportvertrag` | Select | nach `customer_group` | Auswahlfeld für den Supportvertrag (`24/7`, `+3h`, `Standard`, `kein Supportvertrag`) |
+| `custom_supportvertrag` | Link → `Supportvertrag` | nach `customer_group` | Verknüpfungsfeld für den Supportvertrag |
 
 **DocType: Kontakt (`Contact`)**
 
@@ -47,6 +48,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.9` | 2026-05-12 | Neuer DocType `Supportvertrag` mit 4 Stammdaten-Dokumenten; `custom_supportvertrag` von `Select` auf `Link → Supportvertrag` umgestellt |
 | `0.0.8` | 2026-05-11 | `custom_supportvertrag` von `Data` auf `Select` geändert; Optionen: `24/7`, `+3h`, `Standard`, `kein Supportvertrag` |
 | `0.0.7` | 2026-05-11 | Workspace VEPRO: Schnellzugriffe für `Adresse`, `Mitarbeiter`, `Lead` und `Projekt` ergänzt; Karte „Stammdaten" entfernt |
 | `0.0.6` | 2026-05-11 | Workspace VEPRO mit Shortcuts (`Kunde`, `Kontakt`) und Karte „Stammdaten" befüllt |
