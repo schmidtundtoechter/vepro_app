@@ -198,9 +198,12 @@ fixtures = [
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "vepro_app.event.get_events"
-# }
+override_whitelisted_methods = {
+	# Überschreibt download_pdf, damit frappe.conf.pdf_options (aus site_config.json)
+	# tatsächlich an wkhtmltopdf weitergegeben werden.
+	# Ohne diesen Override werden die site_config-Einträge komplett ignoriert.
+	"frappe.utils.print_format.download_pdf": "vepro_app.vepro_app.pdf_utils.download_pdf"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
