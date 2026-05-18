@@ -34,7 +34,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 |---|---|---|---|
 | `custom_ort` | Data | Zeile 10 | Ort des Kontakts |
 | `custom_abteilung` | Link → `Abteilungstyp` | Zeile 11 | Abteilung des Kontakts |
-| `custom_bemerkungen` | Data | Zeile 21 | Freitext-Bemerkungen |
+| `custom_bemerkungen` | Small Text | Zeile 21 | Freitext-Bemerkungen |
 
 #### Workspace
 
@@ -48,6 +48,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.12` | 2026-05-18 | `custom_bemerkungen` im DocType `Contact` von `Data` auf `Small Text` geändert |
 | `0.0.9` | 2026-05-12 | Neuer DocType `Supportvertrag` mit 4 Stammdaten-Dokumenten; `custom_supportvertrag` von `Select` auf `Link → Supportvertrag` umgestellt |
 | `0.0.8` | 2026-05-11 | `custom_supportvertrag` von `Data` auf `Select` geändert; Optionen: `24/7`, `+3h`, `Standard`, `kein Supportvertrag` |
 | `0.0.7` | 2026-05-11 | Workspace VEPRO: Schnellzugriffe für `Adresse`, `Mitarbeiter`, `Lead` und `Projekt` ergänzt; Karte „Stammdaten" entfernt |
