@@ -6,7 +6,8 @@
  "editable_grid": 0,
  "engine": "InnoDB",
  "field_order": [
-  "name1"
+  "name1",
+  "bemerkungen"
  ],
  "fields": [
   {
@@ -16,12 +17,18 @@
    "in_list_view": 1,
    "label": "Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "bemerkungen",
+   "fieldtype": "Data",
+   "idx": 2,
+   "label": "Bemerkungen"
   }
  ],
  "index_web_pages_for_search": 0,
  "istable": 0,
  "links": [],
- "modified": "2026-05-12 00:00:00.000000",
+ "modified": "2026-05-19 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "vepro_app",
  "name": "Supportvertrag",
