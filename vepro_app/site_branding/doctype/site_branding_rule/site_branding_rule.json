@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "autoname": "field:rule_name",
+ "creation": "2026-05-20 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "rule_name",
+  "match_type",
+  "match_value",
+  "priority",
+  "css",
+  "badge_section",
+  "badge_enabled",
+  "badge_text",
+  "badge_position",
+  "badge_color",
+  "badge_text_color",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "rule_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Rule Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "match_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Match Type",
+   "options": "Host Equals\nHost Contains\nURL Contains\nRegex",
+   "reqd": 1
+  },
+  {
+   "fieldname": "match_value",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Match Value",
+   "reqd": 1
+  },
+  {
+   "default": "100",
+   "fieldname": "priority",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Priority"
+  },
+  {
+   "description": "Custom CSS applied when this rule matches. May be left empty when a badge is configured.",
+   "fieldname": "css",
+   "fieldtype": "Code",
+   "label": "Custom CSS",
+   "options": "CSS"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "badge_section",
+   "fieldtype": "Section Break",
+   "label": "Badge"
+  },
+  {
+   "default": "1",
+   "fieldname": "badge_enabled",
+   "fieldtype": "Check",
+   "label": "Show Badge"
+  },
+  {
+   "description": "Short label shown in the corner, e.g. STAGE, TEST, DEV",
+   "fieldname": "badge_text",
+   "fieldtype": "Data",
+   "label": "Badge Text"
+  },
+  {
+   "default": "Top Right",
+   "fieldname": "badge_position",
+   "fieldtype": "Select",
+   "label": "Badge Position",
+   "options": "Top Right\nTop Left\nBottom Right\nBottom Left"
+  },
+  {
+   "description": "Hex colour code, e.g. #ff9800",
+   "fieldname": "badge_color",
+   "fieldtype": "Data",
+   "label": "Badge Background Color"
+  },
+  {
+   "description": "Hex colour code, e.g. #ffffff",
+   "fieldname": "badge_text_color",
+   "fieldtype": "Data",
+   "label": "Badge Text Color"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "links": [],
+ "modified": "2026-05-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Site Branding",
+ "name": "Site Branding Rule",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "priority",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}
