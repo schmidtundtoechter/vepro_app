@@ -85,6 +85,11 @@ app_include_js = ["/assets/vepro_app/js/site_branding.js"]
 # before_install = "vepro_app.install.before_install"
 # after_install = "vepro_app.install.after_install"
 
+# Migration
+# ---------
+
+after_migrate = ["vepro_app.site_branding.setup.create_default_branding_rules"]
+
 # Uninstallation
 # ------------
 
