@@ -1,5 +1,5 @@
 app_name = "vepro_app"
-app_title = "vepro_app"
+app_title = "VEPRO App"
 app_publisher = "Schmidt und Toechter"
 app_description = "Vepro Application"
 app_email = "kontakt@schmidtundtoechter.com"

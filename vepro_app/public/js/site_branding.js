@@ -14,19 +14,31 @@
 		var value = rule.match_value;
 
 		try {
+			var result;
 			switch (rule.match_type) {
 				case "Host Equals":
-					return hostname === value;
+					result = hostname === value;
+					break;
 				case "Host Contains":
-					return hostname.indexOf(value) !== -1;
+					result = hostname.indexOf(value) !== -1;
+					break;
 				case "URL Contains":
-					return href.indexOf(value) !== -1;
+					result = href.indexOf(value) !== -1;
+					break;
 				case "Regex":
-					return new RegExp(value).test(href);
+					result = new RegExp(value).test(href);
+					break;
 				default:
-					return false;
+					result = false;
 			}
+			console.debug(
+				"[site_branding] rule '" + rule.rule_name + "' (" + rule.match_type + " / '" + value + "') →",
+				result ? "MATCH" : "no match",
+				"| hostname:", hostname, "| href:", href
+			);
+			return result;
 		} catch (_e) {
+			console.warn("[site_branding] Error evaluating rule '" + rule.rule_name + "':", _e);
 			return false;
 		}
 	}
@@ -109,7 +121,9 @@
 	// --- Main ---------------------------------------------------------------
 
 	function applyRule(rule) {
+		console.log("[site_branding] Applying rule:", rule.rule_name, rule);
 		if ((rule.css || "").trim()) {
+			console.debug("[site_branding] Injecting CSS:", rule.css);
 			applyCSS(rule.css);
 		}
 		applyBadge(rule);
@@ -117,27 +131,31 @@
 	}
 
 	function init() {
+		console.log("[site_branding] init – hostname:", window.location.hostname, "| href:", window.location.href);
 		frappe.call({
 			method: "vepro_app.site_branding.api.get_branding_rules",
 			freeze: false,
 			callback: function (response) {
 				try {
 					var rules = (response && response.message) || [];
+					console.log("[site_branding] API returned", rules.length, "rule(s):", rules);
 					var matched = findMatchingRule(rules);
 					if (matched) {
 						applyRule(matched);
+					} else {
+						console.log("[site_branding] No rule matched – nothing applied.");
 					}
 				} catch (_e) {
-					// branding is non-critical – never break the UI
+					console.error("[site_branding] Error in callback:", _e);
 				}
 			},
-			error: function () {
-				// silently ignore – branding is non-critical
+			error: function (err) {
+				console.error("[site_branding] API call failed:", err);
 			},
 		});
 	}
 
-	frappe.ready(function () {
+	$(document).ready(function () {
 		init();
 	});
 })();
