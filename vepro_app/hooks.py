@@ -5,6 +5,30 @@ app_description = "Vepro Application"
 app_email = "kontakt@schmidtundtoechter.com"
 app_license = "mit"
 
+fixtures = [
+	# Benutzerdefinierte Felder für Customer und Contact
+	{
+		"dt": "Custom Field",
+		"filters": [
+			["fieldname", "in", [
+				"custom_section_break_8lhrp",
+				"custom_produkte",
+				"custom_supportvertrag",
+				"custom_ort",
+				"custom_abteilung",
+				"custom_bemerkungen",
+			]],
+		],
+	},
+	# Supportvertrag-Stammdaten
+	{
+		"dt": "Supportvertrag",
+		"filters": [
+			["name", "in", ["24/7", "+3h", "Standard", "kein Supportvertrag"]],
+		],
+	},
+]
+
 # Apps
 # ------------------
 
@@ -179,9 +203,12 @@ after_migrate = ["vepro_app.site_branding.setup.create_default_branding_rules"]
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "vepro_app.event.get_events"
-# }
+override_whitelisted_methods = {
+	# Überschreibt download_pdf, damit frappe.conf.pdf_options (aus site_config.json)
+	# tatsächlich an wkhtmltopdf weitergegeben werden.
+	# Ohne diesen Override werden die site_config-Einträge komplett ignoriert.
+	"frappe.utils.print_format.download_pdf": "vepro_app.vepro_app.pdf_utils.download_pdf"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,

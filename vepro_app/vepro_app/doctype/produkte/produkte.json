@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "creation": "2026-05-07 14:22:16.536868",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "produkte",
+  "bemerkungen"
+ ],
+ "fields": [
+  {
+   "fieldname": "produkte",
+   "fieldtype": "Link",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Produkte",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "bemerkungen",
+   "fieldtype": "Data",
+   "idx": 2,
+   "in_list_view": 1,
+   "label": "Bemerkungen"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-05-08 11:17:11.764634",
+ "modified_by": "Administrator",
+ "module": "vepro_app",
+ "name": "Produkte",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

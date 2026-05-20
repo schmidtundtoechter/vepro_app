@@ -1,0 +1,60 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"vepro_h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Schnellzugriff</b></span>\",\"col\":12}},{\"id\":\"vepro_s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Kunde\",\"col\":3}},{\"id\":\"vepro_s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Kontakt\",\"col\":3}},{\"id\":\"vepro_s3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Adresse\",\"col\":3}},{\"id\":\"vepro_s4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mitarbeiter\",\"col\":3}},{\"id\":\"vepro_s5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"vepro_s6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Projekt\",\"col\":3}}]",
+ "creation": "2026-05-08 14:47:10.728374",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-review-points",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "VEPRO",
+ "links": [],
+ "modified": "2026-05-11 08:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "vepro_app",
+ "name": "VEPRO",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "label": "Kunde",
+   "link_to": "Customer",
+   "type": "DocType"
+  },
+  {
+   "label": "Kontakt",
+   "link_to": "Contact",
+   "type": "DocType"
+  },
+  {
+   "label": "Adresse",
+   "link_to": "Address",
+   "type": "DocType"
+  },
+  {
+   "label": "Mitarbeiter",
+   "link_to": "Employee",
+   "type": "DocType"
+  },
+  {
+   "label": "Lead",
+   "link_to": "Lead",
+   "type": "DocType"
+  },
+  {
+   "label": "Projekt",
+   "link_to": "Project",
+   "type": "DocType"
+  }
+ ],
+ "title": "VEPRO"
+}
