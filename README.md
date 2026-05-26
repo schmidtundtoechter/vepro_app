@@ -48,6 +48,9 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.17` | 2026-05-21 | `pdf_utils.py`: HostNotFoundError dauerhaft behoben – Verarbeitungsreihenfolge korrigiert: `scrub_urls()` wird nun manuell aufgerufen, danach erst Hostnamen per Regex durch `127.0.0.1` ersetzt; Frappe's `get_pdf()` wird umgangen, sodass `scrub_urls()` nicht ein zweites Mal läuft und die Ersetzung rückgängig macht |
+| `0.0.16` | 2026-05-21 | Version-Bump für site_branding-Release |
+| `0.0.15` | 2026-05-21 | Neues Modul `site_branding`: DocType `Site Branding Rule` zur umgebungsabhängigen Steuerung von Custom-CSS und optischen Badges im Frappe-Desk; Matching per Hostname oder URL (Host Equals, Host Contains, URL Contains, Regex); Priorität steuerbar; Standard-Regeln für DEV, TEST, STAGE und PROD werden beim Migrate automatisch angelegt (`setup.py`); clientseitige Auswertung via `site_branding.js` (eingebunden über `app_include_js`) |
 | `0.0.14` | 2026-05-19 | Neues Feld `bemerkungen` (Data) im DocType `Supportvertrag` hinzugefügt |
 | `0.0.13` | 2026-05-19 | `pdf_utils.py`: HostNotFoundError dauerhaft behoben – Hostname im HTML wird vor wkhtmltopdf-Übergabe durch `127.0.0.1` ersetzt; `load-error-handling: ignore` wird im Code erzwungen |
 | `0.0.12` | 2026-05-18 | `custom_bemerkungen` im DocType `Contact` von `Data` auf `Small Text` geändert |
