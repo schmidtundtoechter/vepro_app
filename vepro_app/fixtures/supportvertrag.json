@@ -1,0 +1,22 @@
+[
+ {
+  "doctype": "Supportvertrag",
+  "name": "24/7",
+  "name1": "24/7"
+ },
+ {
+  "doctype": "Supportvertrag",
+  "name": "+3h",
+  "name1": "+3h"
+ },
+ {
+  "doctype": "Supportvertrag",
+  "name": "Standard",
+  "name1": "Standard"
+ },
+ {
+  "doctype": "Supportvertrag",
+  "name": "kein Supportvertrag",
+  "name1": "kein Supportvertrag"
+ }
+]
