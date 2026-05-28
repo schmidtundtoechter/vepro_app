@@ -48,6 +48,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.19` | 2026-05-28 | Client Script für DocType `Customer`: Hintergrundfarbe von `custom_supportvertrag` abhängig vom gewählten Supportvertrag (24/7 → grün, +3h → gelb, Standard → blau, kein Supportvertrag → rot); neue Datei `public/js/customer.js`, eingebunden via `doctype_js`-Hook |
 | `0.0.18` | 2026-05-27 | Version-Bump |
 | `0.0.17` | 2026-05-21 | `pdf_utils.py`: HostNotFoundError dauerhaft behoben – Verarbeitungsreihenfolge korrigiert: `scrub_urls()` wird nun manuell aufgerufen, danach erst Hostnamen per Regex durch `127.0.0.1` ersetzt; Frappe's `get_pdf()` wird umgangen, sodass `scrub_urls()` nicht ein zweites Mal läuft und die Ersetzung rückgängig macht |
 | `0.0.16` | 2026-05-21 | Version-Bump für site_branding-Release |
