@@ -6,6 +6,15 @@ app_email = "kontakt@schmidtundtoechter.com"
 app_license = "mit"
 
 fixtures = [
+	# Help Article
+	{
+		"dt": "Help Category",
+		"filters": [["name", "=", "VEPRO App"]],
+	},
+	{
+		"dt": "Help Article",
+		"filters": [["name", "in", ["App-Informationen", "Anpassungen", "Versionshistorie"]]],
+	},
 	# Benutzerdefinierte Felder für Customer und Contact
 	{
 		"dt": "Custom Field",

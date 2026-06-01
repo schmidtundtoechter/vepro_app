@@ -1,21 +1,33 @@
 [
  {
+  "bemerkungen": null,
+  "docstatus": 0,
   "doctype": "Supportvertrag",
+  "modified": "2026-05-28 13:40:58.164274",
   "name": "24/7",
   "name1": "24/7"
  },
  {
+  "bemerkungen": null,
+  "docstatus": 0,
   "doctype": "Supportvertrag",
+  "modified": "2026-05-28 13:40:58.181639",
   "name": "+3h",
   "name1": "+3h"
  },
  {
+  "bemerkungen": null,
+  "docstatus": 0,
   "doctype": "Supportvertrag",
+  "modified": "2026-05-28 13:40:58.197504",
   "name": "Standard",
   "name1": "Standard"
  },
  {
+  "bemerkungen": null,
+  "docstatus": 0,
   "doctype": "Supportvertrag",
+  "modified": "2026-05-28 13:40:58.214176",
   "name": "kein Supportvertrag",
   "name1": "kein Supportvertrag"
  }

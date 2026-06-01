@@ -40,7 +40,15 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Name | Beschreibung |
 |---|---|
-| `VEPRO` | Eigener Workspace im Frappe Desk; Icon `color-review-points`; enthält Schnellzugriff-Shortcuts für `Kunde`, `Kontakt`, `Adresse`, `Mitarbeiter`, `Lead` und `Projekt` |
+| `VEPRO` | Eigener Workspace im Frappe Desk; Icon `color-review-points`; Bereich **Schnellzugriff** mit Links zu `Kunde`, `Kontakt`, `Adresse`, `Mitarbeiter`, `Lead`, `Projekt`; Bereich **Hilfe** mit Links zu `App-Informationen`, `Anpassungen` und `Versionshistorie` |
+
+#### Help Articles
+
+| Name | Kategorie | Beschreibung |
+|---|---|---|
+| `App-Informationen` | VEPRO App | Allgemeine App-Informationen und Branch-Übersicht |
+| `Anpassungen` | VEPRO App | DocTypes, Custom Fields, Workspace und Help Articles der vepro_app |
+| `Versionshistorie` | VEPRO App | Changelog der vepro_app als HTML-Seite im Frappe Desk |
 
 ---
 
@@ -48,7 +56,9 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
-| `0.0.19` | 2026-05-28 | Client Script für DocType `Customer`: Hintergrundfarbe von `custom_supportvertrag` abhängig vom gewählten Supportvertrag (24/7 → grün, +3h → gelb, Standard → blau, kein Supportvertrag → rot); neue Datei `public/js/customer.js`, eingebunden via `doctype_js`-Hook |
+| `0.0.21` | 2026-05-28 | Neue Help Articles `App-Informationen` und `Anpassungen` (Kategorie `VEPRO App`) als Fixtures; Workspace VEPRO: Hilfe-Shortcuts auf öffentliche Routen umgestellt; Reihenfolge im Bereich **Hilfe**: App-Informationen, Anpassungen, Versionshistorie |
+| `0.0.20` | 2026-05-28 | Workspace VEPRO: Shortcut „Versionshistorie" in neuen Abschnitt **Hilfe** verschoben; Abschnitt **Schnellzugriff** nur noch mit DocType-Links |
+| `0.0.19` | 2026-05-28 | Help Article `Versionshistorie` (Kategorie `VEPRO App`) als Fixture; README-Inhalt als HTML im Frappe Desk; Workspace-Shortcut; Client Script `public/js/customer.js` für Hintergrundfarbe von `custom_supportvertrag` (24/7 → grün, +3h → gelb, Standard → blau, kein Supportvertrag → rot); eingebunden via `doctype_js`-Hook |
 | `0.0.18` | 2026-05-27 | Version-Bump |
 | `0.0.17` | 2026-05-21 | `pdf_utils.py`: HostNotFoundError dauerhaft behoben – Verarbeitungsreihenfolge korrigiert: `scrub_urls()` wird nun manuell aufgerufen, danach erst Hostnamen per Regex durch `127.0.0.1` ersetzt; Frappe's `get_pdf()` wird umgangen, sodass `scrub_urls()` nicht ein zweites Mal läuft und die Ersetzung rückgängig macht |
 | `0.0.16` | 2026-05-21 | Version-Bump für site_branding-Release |
