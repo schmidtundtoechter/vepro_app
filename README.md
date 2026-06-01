@@ -56,6 +56,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.22` | 2026-06-01 | Bugfix: Workspace VEPRO – Hilfe-Shortcuts (`App-Informationen`, `Anpassungen`, `Versionshistorie`) verwendeten falsches Feld `link_to` statt `url`; nach `export-doc` korrigiert – Links funktionieren jetzt auch auf neuen Sites nach `bench migrate` |
 | `0.0.21` | 2026-05-28 | Neue Help Articles `App-Informationen` und `Anpassungen` (Kategorie `VEPRO App`) als Fixtures; Workspace VEPRO: Hilfe-Shortcuts auf öffentliche Routen umgestellt; Reihenfolge im Bereich **Hilfe**: App-Informationen, Anpassungen, Versionshistorie |
 | `0.0.20` | 2026-05-28 | Workspace VEPRO: Shortcut „Versionshistorie" in neuen Abschnitt **Hilfe** verschoben; Abschnitt **Schnellzugriff** nur noch mit DocType-Links |
 | `0.0.19` | 2026-05-28 | Help Article `Versionshistorie` (Kategorie `VEPRO App`) als Fixture; README-Inhalt als HTML im Frappe Desk; Workspace-Shortcut; Client Script `public/js/customer.js` für Hintergrundfarbe von `custom_supportvertrag` (24/7 → grün, +3h → gelb, Standard → blau, kein Supportvertrag → rot); eingebunden via `doctype_js`-Hook |
