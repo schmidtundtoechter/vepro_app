@@ -30,6 +30,13 @@ fixtures = [
 			]],
 		],
 	},
+	# Property Setter für Standard-Felder (z.B. Beschreibungen)
+	{
+		"dt": "Property Setter",
+		"filters": [
+			["name", "in", ["Contact-designation-description"]],
+		],
+	},
 	# Supportvertrag-Stammdaten
 	{
 		"dt": "Supportvertrag",

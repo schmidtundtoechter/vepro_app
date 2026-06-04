@@ -58,6 +58,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.25` | 2026-06-04 | Feldbeschreibungen für `custom_auswahl_position` und natives Feld `designation` (Position) im DocType `Kontakt` hinzugefügt; neues Fixture `property_setter.json` für Standard-Feldbeschreibung |
 | `0.0.24` | 2026-06-01 | Neuer DocType `Auswahl Position` (Stammdaten für Positionsbezeichnungen); neues Custom Field `custom_auswahl_position` (Link → `Auswahl Position`) im DocType `Kontakt` nach `salutation`; Client Script `public/js/contact.js`: Wert wird bei Auswahl automatisch in das native Feld `designation` übertragen |
 | `0.0.23` | 2026-06-01 | Bugfix: Help Articles `App-Informationen` und `Anpassungen` – `author`-Feld auf `l.maeurer@schmidtundtoechter.com` gesetzt (war `user_fullname`-Platzhalter → Fixture-Import schlug auf neuen Systemen fehl → "Page not found") |
 | `0.0.22` | 2026-06-01 | Bugfix: Workspace VEPRO – Hilfe-Shortcuts (`App-Informationen`, `Anpassungen`, `Versionshistorie`) verwendeten falsches Feld `link_to` statt `url`; nach `export-doc` korrigiert – Links funktionieren jetzt auch auf neuen Sites nach `bench migrate` |
