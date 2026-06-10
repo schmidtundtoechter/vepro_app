@@ -1,2 +1,1 @@
 vepro_app
-Site Branding
