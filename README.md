@@ -16,6 +16,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 |---|---|---|
 | `Produkte` | Child Table | Produktliste; wird im DocType „Kunde" als Tabelle eingebettet |
 | `Abteilungstyp` | Stammdaten | Auswahlliste für Abteilungen; wird im DocType „Kontakt" als Link-Feld verwendet |
+| `Auswahl Position` | Stammdaten | Positionsbezeichnungen; wird im DocType „Kontakt" als Link-Feld verwendet und automatisch in das native Feld `designation` übertragen |
 | `Supportvertrag` | Stammdaten | Supportvertrags-Typen (`24/7`, `+3h`, `Standard`, `kein Supportvertrag`); wird im DocType „Kunde" als Link-Feld verwendet |
 
 #### Custom Fields
@@ -32,6 +33,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
+| `custom_auswahl_position` | Link → `Auswahl Position` | nach `salutation` (Anrede) | Auswahl der Position; Wert wird automatisch in das native Feld `designation` übertragen |
 | `custom_ort` | Data | Zeile 10 | Ort des Kontakts |
 | `custom_abteilung` | Link → `Abteilungstyp` | Zeile 11 | Abteilung des Kontakts |
 | `custom_bemerkungen` | Small Text | Zeile 21 | Freitext-Bemerkungen |
@@ -56,6 +58,8 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.25` | 2026-06-04 | Feldbeschreibungen für `custom_auswahl_position` und natives Feld `designation` (Position) im DocType `Kontakt` hinzugefügt; neues Fixture `property_setter.json` für Standard-Feldbeschreibung |
+| `0.0.24` | 2026-06-01 | Neuer DocType `Auswahl Position` (Stammdaten für Positionsbezeichnungen); neues Custom Field `custom_auswahl_position` (Link → `Auswahl Position`) im DocType `Kontakt` nach `salutation`; Client Script `public/js/contact.js`: Wert wird bei Auswahl automatisch in das native Feld `designation` übertragen |
 | `0.0.23` | 2026-06-01 | Bugfix: Help Articles `App-Informationen` und `Anpassungen` – `author`-Feld auf `l.maeurer@schmidtundtoechter.com` gesetzt (war `user_fullname`-Platzhalter → Fixture-Import schlug auf neuen Systemen fehl → "Page not found") |
 | `0.0.22` | 2026-06-01 | Bugfix: Workspace VEPRO – Hilfe-Shortcuts (`App-Informationen`, `Anpassungen`, `Versionshistorie`) verwendeten falsches Feld `link_to` statt `url`; nach `export-doc` korrigiert – Links funktionieren jetzt auch auf neuen Sites nach `bench migrate` |
 | `0.0.21` | 2026-05-28 | Neue Help Articles `App-Informationen` und `Anpassungen` (Kategorie `VEPRO App`) als Fixtures; Workspace VEPRO: Hilfe-Shortcuts auf öffentliche Routen umgestellt; Reihenfolge im Bereich **Hilfe**: App-Informationen, Anpassungen, Versionshistorie |

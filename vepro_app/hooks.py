@@ -26,7 +26,15 @@ fixtures = [
 				"custom_ort",
 				"custom_abteilung",
 				"custom_bemerkungen",
+				"custom_auswahl_position",
 			]],
+		],
+	},
+	# Property Setter für Standard-Felder (z.B. Beschreibungen)
+	{
+		"dt": "Property Setter",
+		"filters": [
+			["name", "in", ["Contact-designation-description"]],
 		],
 	},
 	# Supportvertrag-Stammdaten
@@ -76,7 +84,10 @@ app_include_js = ["/assets/vepro_app/js/site_branding.js"]
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Customer": "public/js/customer.js"}
+doctype_js = {
+	"Customer": "public/js/customer.js",
+	"Contact":  "public/js/contact.js",
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
