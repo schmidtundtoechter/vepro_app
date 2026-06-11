@@ -6,6 +6,15 @@ app_email = "kontakt@schmidtundtoechter.com"
 app_license = "mit"
 
 fixtures = [
+	# Help Article
+	{
+		"dt": "Help Category",
+		"filters": [["name", "=", "VEPRO App"]],
+	},
+	{
+		"dt": "Help Article",
+		"filters": [["name", "in", ["App-Informationen", "Anpassungen", "Versionshistorie"]]],
+	},
 	# Benutzerdefinierte Felder für Customer und Contact
 	{
 		"dt": "Custom Field",
@@ -17,7 +26,15 @@ fixtures = [
 				"custom_ort",
 				"custom_abteilung",
 				"custom_bemerkungen",
+				"custom_auswahl_position",
 			]],
+		],
+	},
+	# Property Setter für Standard-Felder (z.B. Beschreibungen)
+	{
+		"dt": "Property Setter",
+		"filters": [
+			["name", "in", ["Contact-designation-description"]],
 		],
 	},
 	# Supportvertrag-Stammdaten
@@ -50,7 +67,7 @@ fixtures = [
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/vepro_app/css/vepro_app.css"
-app_include_js = ["/assets/vepro_app/js/site_branding.js"]
+# app_include_js = []
 
 # include js, css files in header of web template
 # web_include_css = "/assets/vepro_app/css/vepro_app.css"
@@ -67,7 +84,10 @@ app_include_js = ["/assets/vepro_app/js/site_branding.js"]
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+	"Customer": "public/js/customer.js",
+	"Contact":  "public/js/contact.js",
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -112,7 +132,7 @@ app_include_js = ["/assets/vepro_app/js/site_branding.js"]
 # Migration
 # ---------
 
-after_migrate = ["vepro_app.site_branding.setup.create_default_branding_rules"]
+# after_migrate = []
 
 # Uninstallation
 # ------------
