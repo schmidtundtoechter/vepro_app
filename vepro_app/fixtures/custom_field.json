@@ -179,7 +179,7 @@
   "columns": 0,
   "default": null,
   "depends_on": null,
-  "description": null,
+  "description": "Position ist hier auswählbar, die Auswahl wird dann ins Feld \"Position\" übernommen.",
   "docstatus": 0,
   "doctype": "Custom Field",
   "dt": "Contact",
@@ -204,7 +204,7 @@
   "length": 0,
   "link_filters": null,
   "mandatory_depends_on": null,
-  "modified": "2026-06-04 00:00:00.000000",
+  "modified": "2026-06-04 00:00:00",
   "module": null,
   "name": "Contact-custom_auswahl_position",
   "no_copy": 0,
@@ -225,8 +225,7 @@
   "sort_options": 0,
   "translatable": 0,
   "unique": 0,
-  "width": null,
-  "description": "Position ist hier auswählbar, die Auswahl wird dann ins Feld \"Position\" übernommen."
+  "width": null
  },
  {
   "allow_in_quick_entry": 0,
