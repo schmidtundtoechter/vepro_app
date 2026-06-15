@@ -58,6 +58,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.27` | 2026-06-15 | Workspace VEPRO: neuer Abschnitt **Administration** mit Shortcut **System Diagnostics** → `/system_diagnostics` (relative URL, funktioniert auf jeder Site) |
 | `0.0.26` | 2026-06-15 | App `sut_app_core` installiert (Branch: `main`); Modul `site_branding` aus `vepro_app` entfernt (hooks.py, modules.txt, Ordner, JS-Datei) – Funktionalität liegt jetzt vollständig in `sut_app_core`; Bugfix `devcontainer.json`: grep-Bedingung in `postStartCommand` auf `d-code-vepro.localhost` korrigiert, damit wkhtmltopdf den Hostnamen auflösen kann (HostNotFoundError bei PDF-Generierung) |
 | `0.0.25` | 2026-06-04 | Feldbeschreibungen für `custom_auswahl_position` und natives Feld `designation` (Position) im DocType `Kontakt` hinzugefügt; neues Fixture `property_setter.json` für Standard-Feldbeschreibung |
 | `0.0.24` | 2026-06-01 | Neuer DocType `Auswahl Position` (Stammdaten für Positionsbezeichnungen); neues Custom Field `custom_auswahl_position` (Link → `Auswahl Position`) im DocType `Kontakt` nach `salutation`; Client Script `public/js/contact.js`: Wert wird bei Auswahl automatisch in das native Feld `designation` übertragen |
