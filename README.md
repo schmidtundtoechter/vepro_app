@@ -58,6 +58,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.31` | 2026-06-24 | DocType `Adresse`: Feldbeschreibungen (blau) für `address_title` (Person/Firma), `address_line1` (Straße + Hausnummer) und `address_line2` (zusätzliche Adresszeile) als Property Setter |
 | `0.0.30` | 2026-06-24 | Workspace VEPRO: neuer Shortcut **Kontakte nach Kunde** (Typ: Report) im Abschnitt **Schnellzugriff** direkt nach „Kontakt“ |
 | `0.0.29` | 2026-06-24 | Neuer Script Report **Kontakte nach Kunde**: filtert Kontakte anhand des verknüpften Kunden (Child-Table `Dynamic Link`); Filter-Feld als `Link`-Feld mit Autocomplete |
 | `0.0.28` | 2026-06-15 | DocType `Kunde`: 3 neue Custom Fields nach `custom_supportvertrag` – `custom_telefonnummer` (Telefonnummer, Data), `custom_e_mail_adresse` (E-Mail-Adresse, Data), `custom_website` (Website, Data) |

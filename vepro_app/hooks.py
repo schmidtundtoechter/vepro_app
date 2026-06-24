@@ -37,7 +37,12 @@ fixtures = [
 	{
 		"dt": "Property Setter",
 		"filters": [
-			["name", "in", ["Contact-designation-description"]],
+			["name", "in", [
+				"Contact-designation-description",
+				"Address-address_title-description",
+				"Address-address_line1-description",
+				"Address-address_line2-description",
+			]],
 		],
 	},
 	# Supportvertrag-Stammdaten
