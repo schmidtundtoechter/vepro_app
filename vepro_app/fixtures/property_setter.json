@@ -14,5 +14,53 @@
   "property_type": "Text",
   "row_name": null,
   "value": "...wird übernommen von \"Auswahl Position\", kann aber trotzdem auch manuell ausgefüllt werden (Freitext)"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Address",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "address_title",
+  "is_system_generated": 0,
+  "modified": "2026-06-24 15:29:45.996004",
+  "module": null,
+  "name": "Address-address_title-description",
+  "property": "description",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "<span style=\"color:#2490ef;\">Person/Firma &rarr; Beispiel: &bdquo;Max Mustermann&ldquo;</span>"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Address",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "address_line1",
+  "is_system_generated": 0,
+  "modified": "2026-06-24 15:29:46.496783",
+  "module": null,
+  "name": "Address-address_line1-description",
+  "property": "description",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "<span style=\"color:#2490ef;\">Stra&szlig;e + Hausnummer &rarr; Beispiel: &bdquo;Turmstra&szlig;e 14a&ldquo;</span>"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Address",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "address_line2",
+  "is_system_generated": 0,
+  "modified": "2026-06-24 15:29:46.518172",
+  "module": null,
+  "name": "Address-address_line2-description",
+  "property": "description",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "<span style=\"color:#2490ef;\">Zus&auml;tzliche Adress-Zeile &rarr; Beispiel: &bdquo;FA f&uuml;r Allgemeinmedizin&ldquo; (wird nur angezeigt, wenn nicht leer)</span>"
  }
 ]
