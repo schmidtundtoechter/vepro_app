@@ -1,13 +1,18 @@
 [
  {
+  "default_value": null,
+  "doc_type": "Contact",
+  "docstatus": 0,
   "doctype": "Property Setter",
   "doctype_or_field": "DocField",
-  "doc_type": "Contact",
   "field_name": "designation",
+  "is_system_generated": 0,
+  "modified": "2026-06-04 00:00:00",
+  "module": null,
+  "name": "Contact-designation-description",
   "property": "description",
   "property_type": "Text",
-  "value": "...wird übernommen von \"Auswahl Position\", kann aber trotzdem auch manuell ausgefüllt werden (Freitext)",
-  "name": "Contact-designation-description",
-  "modified": "2026-06-04 00:00:00.000000"
+  "row_name": null,
+  "value": "...wird übernommen von \"Auswahl Position\", kann aber trotzdem auch manuell ausgefüllt werden (Freitext)"
  }
 ]
