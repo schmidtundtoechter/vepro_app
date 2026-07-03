@@ -350,7 +350,7 @@
   "columns": 0,
   "default": null,
   "depends_on": null,
-  "description": "Bitte hier den zugeordneten Kunden auswählen",
+  "description": "Bitte hier den zugeordneten Kunden auswählen.<br>Der Kunde muss auch in der Referenz-Tabelle eingetragen sein!",
   "docstatus": 0,
   "doctype": "Custom Field",
   "dt": "Contact",
