@@ -28,6 +28,7 @@ fixtures = [
 				"custom_website",
 				"custom_ort",
 				"custom_abteilung",
+				"custom_kunde",
 				"custom_bemerkungen",
 				"custom_auswahl_position",
 			]],
@@ -44,6 +45,11 @@ fixtures = [
 				"Address-address_line2-description",
 			]],
 		],
+	},
+	# Server Scripts (geplante Aufgaben, sichtbar im Frontend)
+	{
+		"dt": "Server Script",
+		"filters": [["name", "=", "Kontakt Kunde Sync"]],
 	},
 	# Supportvertrag-Stammdaten
 	{
@@ -204,24 +210,8 @@ doctype_js = {
 
 # Scheduled Tasks
 # ---------------
-
-# scheduler_events = {
-# 	"all": [
-# 		"vepro_app.tasks.all"
-# 	],
-# 	"daily": [
-# 		"vepro_app.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"vepro_app.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"vepro_app.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"vepro_app.tasks.monthly"
-# 	],
-# }
+# Geplante Aufgaben werden als Server Scripts verwaltet (sichtbar unter Settings → Server Script).
+# Manuelle Implementierung: vepro_app.vepro_app.tasks
 
 # Testing
 # -------

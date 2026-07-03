@@ -36,7 +36,14 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | `custom_auswahl_position` | Link → `Auswahl Position` | nach `salutation` (Anrede) | Auswahl der Position; Wert wird automatisch in das native Feld `designation` übertragen |
 | `custom_ort` | Data | Zeile 10 | Ort des Kontakts |
 | `custom_abteilung` | Link → `Abteilungstyp` | Zeile 11 | Abteilung des Kontakts |
+| `custom_kunde` | Link → `Customer` | nach `custom_abteilung` | Zugeordneter Kunde; wird täglich automatisch aus den Dynamic Links befüllt |
 | `custom_bemerkungen` | Small Text | Zeile 21 | Freitext-Bemerkungen |
+
+#### Server Scripts
+
+| Name | Typ | Zeitplan | Beschreibung |
+|---|---|---|---|
+| `Kontakt Kunde Sync` | Scheduler Event | täglich 03:00 Uhr (`0 3 * * *`) | Durchsucht alle Kontakte mit leerem Feld `custom_kunde` und trägt automatisch den ersten verknüpften Kunden aus der Dynamic-Links-Tabelle ein |
 
 #### Workspace
 
@@ -58,6 +65,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.32` | 2026-07-03 | DocType `Kontakt`: neues Custom Field `custom_kunde` (Link → `Customer`) nach `custom_abteilung`, mit Feldbeschreibung; Server Script `Kontakt Kunde Sync` (Scheduler Event, täglich 03:00 Uhr): befüllt `custom_kunde` automatisch aus den Dynamic Links |
 | `0.0.31` | 2026-06-24 | DocType `Adresse`: Feldbeschreibungen (blau) für `address_title` (Person/Firma), `address_line1` (Straße + Hausnummer) und `address_line2` (zusätzliche Adresszeile) als Property Setter |
 | `0.0.30` | 2026-06-24 | Workspace VEPRO: neuer Shortcut **Kontakte nach Kunde** (Typ: Report) im Abschnitt **Schnellzugriff** direkt nach „Kontakt“ |
 | `0.0.29` | 2026-06-24 | Neuer Script Report **Kontakte nach Kunde**: filtert Kontakte anhand des verknüpften Kunden (Child-Table `Dynamic Link`); Filter-Feld als `Link`-Feld mit Autocomplete |
