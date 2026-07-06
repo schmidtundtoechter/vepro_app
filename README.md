@@ -65,6 +65,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.33` | 2026-07-06 | DocType `Kontakt`: Standard-Filter `Status` entfernt (Property Setter `in_standard_filter: 0`); Custom Field `custom_kunde` mit Option „In Standard Filter" versehen |
 | `0.0.32` | 2026-07-03 | DocType `Kontakt`: neues Custom Field `custom_kunde` (Link → `Customer`) nach `custom_abteilung`, mit Feldbeschreibung; Server Script `Kontakt Kunde Sync` (Scheduler Event, täglich 03:00 Uhr): befüllt `custom_kunde` automatisch aus den Dynamic Links |
 | `0.0.31` | 2026-06-24 | DocType `Adresse`: Feldbeschreibungen (blau) für `address_title` (Person/Firma), `address_line1` (Straße + Hausnummer) und `address_line2` (zusätzliche Adresszeile) als Property Setter |
 | `0.0.30` | 2026-06-24 | Workspace VEPRO: neuer Shortcut **Kontakte nach Kunde** (Typ: Report) im Abschnitt **Schnellzugriff** direkt nach „Kontakt“ |
