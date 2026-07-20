@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"vepro_h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'><b>Schnellzugriff</b></span>\", \"col\": 12}}, {\"id\": \"vepro_s1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Kunde\", \"col\": 3}}, {\"id\": \"vepro_s2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Kontakt\", \"col\": 3}}, {\"id\": \"vepro_s2b\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Kontakte nach Kunde\", \"col\": 3}}, {\"id\": \"vepro_s3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Adresse\", \"col\": 3}}, {\"id\": \"vepro_s4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Mitarbeiter\", \"col\": 3}}, {\"id\": \"vepro_s5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Lead\", \"col\": 3}}, {\"id\": \"vepro_s6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Projekt\", \"col\": 3}}, {\"id\": \"vepro_h2\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'><b>Hilfe</b></span>\", \"col\": 12}}, {\"id\": \"vepro_s7\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"App-Informationen\", \"col\": 3}}, {\"id\": \"vepro_s8\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Anpassungen\", \"col\": 3}}, {\"id\": \"vepro_s9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Versionshistorie\", \"col\": 3}}, {\"id\": \"vepro_h3\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'><b>Administration</b></span>\", \"col\": 12}}, {\"id\": \"vepro_s10\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"System Diagnostics\", \"col\": 3}}]",
+ "content": "[{\"id\": \"vepro_h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'><b>Schnellzugriff</b></span>\", \"col\": 12}}, {\"id\": \"vepro_s1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Kunde\", \"col\": 3}}, {\"id\": \"vepro_s2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Kontakt\", \"col\": 3}}, {\"id\": \"vepro_s2b\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Kontakte nach Kunde\", \"col\": 3}}, {\"id\": \"vepro_s3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Adresse\", \"col\": 3}}, {\"id\": \"vepro_s4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Mitarbeiter\", \"col\": 3}}, {\"id\": \"vepro_s5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Lead\", \"col\": 3}}, {\"id\": \"vepro_s6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Projekt\", \"col\": 3}}, {\"id\": \"vepro_s6c\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Lieferant\", \"col\": 3}}, {\"id\": \"vepro_h2\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'><b>Hilfe</b></span>\", \"col\": 12}}, {\"id\": \"vepro_s7\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"App-Informationen\", \"col\": 3}}, {\"id\": \"vepro_s8\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Anpassungen\", \"col\": 3}}, {\"id\": \"vepro_s9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Versionshistorie\", \"col\": 3}}, {\"id\": \"vepro_h3\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'><b>Administration</b></span>\", \"col\": 12}}, {\"id\": \"vepro_s10\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"System Diagnostics\", \"col\": 3}}]",
  "creation": "2026-05-08 14:47:10.728374",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "VEPRO",
  "links": [],
- "modified": "2026-06-24 14:37:53.418439",
+ "modified": "2026-07-20 14:21:17.044515",
  "modified_by": "Administrator",
  "module": "vepro_app",
  "name": "VEPRO",
@@ -26,6 +26,13 @@
  "sequence_id": 2.0,
  "shortcuts": [
   {
+   "doc_view": "",
+   "label": "Kontakte nach Kunde",
+   "link_to": "Kontakte nach Kunde",
+   "report_ref_doctype": "Contact",
+   "type": "Report"
+  },
+  {
    "label": "Kunde",
    "link_to": "Customer",
    "type": "DocType"
@@ -34,13 +41,6 @@
    "label": "Kontakt",
    "link_to": "Contact",
    "type": "DocType"
-  },
-  {
-   "doc_view": "",
-   "label": "Kontakte nach Kunde",
-   "link_to": "Kontakte nach Kunde",
-   "report_ref_doctype": "Contact",
-   "type": "Report"
   },
   {
    "label": "Adresse",
@@ -82,6 +82,12 @@
    "label": "System Diagnostics",
    "type": "URL",
    "url": "/system_diagnostics"
+  },
+  {
+   "doc_view": "",
+   "label": "Lieferant",
+   "link_to": "Supplier",
+   "type": "DocType"
   }
  ],
  "title": "VEPRO"
