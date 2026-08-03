@@ -52,6 +52,12 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | `user` | via Property Setter `hidden: 1` |
 | `middle_name` | via Property Setter `hidden: 1` |
 
+**DocTypes: Angebot, Auftrag, Ausgangsrechnung, Lieferschein (`Quotation`, `Sales Order`, `Sales Invoice`, `Delivery Note`)**
+
+| Feldname | Beschreibung |
+|---|---|
+| `scan_barcode` | via Property Setter `hidden: 1` |
+
 #### Server Scripts
 
 | Name | Typ | Zeitplan | Beschreibung |
@@ -78,6 +84,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.36` | 2026-08-03 | DocTypes `Angebot`, `Auftrag`, `Ausgangsrechnung`, `Lieferschein`: Feld `scan_barcode` ausgeblendet via Property Setter `hidden: 1` |
 | `0.0.35` | 2026-07-29 | Alle 12 manuellen Property Setter sowie Custom Field `custom_lieferant` korrekt als App-Fixtures registriert (Deinstallation macht Änderungen rückgängig); DocType `Kontakt`: 5 native Felder ausgeblendet (`status`, `gender`, `sync_with_google_contacts`, `user`, `middle_name`) via Property Setter `hidden: 1` |
 | `0.0.34` | 2026-07-20 | DocType `Kontakt`: neues Custom Field `custom_lieferant` (Link → `Supplier`) nach `custom_kunde`, mit Feldbeschreibung |
 | `0.0.33` | 2026-07-06 | DocType `Kontakt`: Standard-Filter `Status` entfernt (Property Setter `in_standard_filter: 0`); Custom Field `custom_kunde` mit Option „In Standard Filter" versehen |
