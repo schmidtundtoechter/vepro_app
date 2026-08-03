@@ -37,7 +37,26 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | `custom_ort` | Data | Zeile 10 | Ort des Kontakts |
 | `custom_abteilung` | Link → `Abteilungstyp` | Zeile 11 | Abteilung des Kontakts |
 | `custom_kunde` | Link → `Customer` | nach `custom_abteilung` | Zugeordneter Kunde; wird täglich automatisch aus den Dynamic Links befüllt |
+| `custom_lieferant` | Link → `Supplier` | nach `custom_kunde` | Zugeordneter Lieferant |
 | `custom_bemerkungen` | Small Text | Zeile 21 | Freitext-Bemerkungen |
+
+#### Ausgeblendete native Felder
+
+**DocType: Kontakt (`Contact`)**
+
+| Feldname | Beschreibung |
+|---|---|
+| `status` | via Property Setter `hidden: 1` |
+| `gender` | via Property Setter `hidden: 1` |
+| `sync_with_google_contacts` | via Property Setter `hidden: 1` |
+| `user` | via Property Setter `hidden: 1` |
+| `middle_name` | via Property Setter `hidden: 1` |
+
+**DocTypes: Angebot, Auftrag, Ausgangsrechnung, Lieferschein (`Quotation`, `Sales Order`, `Sales Invoice`, `Delivery Note`)**
+
+| Feldname | Beschreibung |
+|---|---|
+| `scan_barcode` | via Property Setter `hidden: 1` |
 
 #### Server Scripts
 
@@ -65,6 +84,8 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.36` | 2026-08-03 | DocTypes `Angebot`, `Auftrag`, `Ausgangsrechnung`, `Lieferschein`: Feld `scan_barcode` ausgeblendet via Property Setter `hidden: 1` |
+| `0.0.35` | 2026-07-29 | Alle 12 manuellen Property Setter sowie Custom Field `custom_lieferant` korrekt als App-Fixtures registriert (Deinstallation macht Änderungen rückgängig); DocType `Kontakt`: 5 native Felder ausgeblendet (`status`, `gender`, `sync_with_google_contacts`, `user`, `middle_name`) via Property Setter `hidden: 1` |
 | `0.0.34` | 2026-07-20 | DocType `Kontakt`: neues Custom Field `custom_lieferant` (Link → `Supplier`) nach `custom_kunde`, mit Feldbeschreibung |
 | `0.0.33` | 2026-07-06 | DocType `Kontakt`: Standard-Filter `Status` entfernt (Property Setter `in_standard_filter: 0`); Custom Field `custom_kunde` mit Option „In Standard Filter" versehen |
 | `0.0.32` | 2026-07-03 | DocType `Kontakt`: neues Custom Field `custom_kunde` (Link → `Customer`) nach `custom_abteilung`, mit Feldbeschreibung; Server Script `Kontakt Kunde Sync` (Scheduler Event, täglich 03:00 Uhr): befüllt `custom_kunde` automatisch aus den Dynamic Links |
