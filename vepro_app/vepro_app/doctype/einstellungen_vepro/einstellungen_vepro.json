@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "creation": "2026-08-03 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "obergrenze_ohne_freigabe",
+  "untergrenze_mit_freigabe"
+ ],
+ "fields": [
+  {
+   "fieldname": "obergrenze_ohne_freigabe",
+   "fieldtype": "Currency",
+   "idx": 1,
+   "label": "Obergrenze f\u00fcr Buchen ohne Freigabe"
+  },
+  {
+   "fieldname": "untergrenze_mit_freigabe",
+   "fieldtype": "Currency",
+   "idx": 2,
+   "label": "Untergrenze f\u00fcr Buchen mit Freigabe"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-08-03 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "vepro_app",
+ "name": "Einstellungen Vepro",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}
