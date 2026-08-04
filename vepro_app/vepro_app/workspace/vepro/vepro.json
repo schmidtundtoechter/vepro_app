@@ -1,0 +1,109 @@
+{
+ "charts": [],
+ "content": "[{\"id\": \"vepro_h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'><b>Schnellzugriff</b></span>\", \"col\": 12}}, {\"id\": \"vepro_s1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Kunde\", \"col\": 3}}, {\"id\": \"vepro_s2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Kontakt\", \"col\": 3}}, {\"id\": \"vepro_s2b\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Kontakte nach Kunde\", \"col\": 3}}, {\"id\": \"vepro_s3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Adresse\", \"col\": 3}}, {\"id\": \"vepro_s4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Mitarbeiter\", \"col\": 3}}, {\"id\": \"vepro_s5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Lead\", \"col\": 3}}, {\"id\": \"vepro_s6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Projekt\", \"col\": 3}}, {\"id\": \"vepro_s6c\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Lieferant\", \"col\": 3}}, {\"id\": \"vepro_h2\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'><b>Hilfe</b></span>\", \"col\": 12}}, {\"id\": \"vepro_s7\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"App-Informationen\", \"col\": 3}}, {\"id\": \"vepro_s8\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Anpassungen\", \"col\": 3}}, {\"id\": \"vepro_s9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Versionshistorie\", \"col\": 3}}, {\"id\": \"vepro_h3\", \"type\": \"header\", \"data\": {\"text\": \"<span class='h4'><b>Administration</b></span>\", \"col\": 12}}, {\"id\": \"vepro_s10\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"System Diagnostics\", \"col\": 3}}, {\"id\": \"vepro_s11\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Einstellungen Vepro\", \"col\": 3}}]",
+ "creation": "2026-08-03 14:52:03.260485",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-review-points",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "VEPRO",
+ "links": [],
+ "modified": "2026-08-04 10:36:33.197976",
+ "modified_by": "Administrator",
+ "module": "vepro_app",
+ "name": "VEPRO",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "Kontakte nach Kunde",
+   "link_to": "Kontakte nach Kunde",
+   "report_ref_doctype": "Contact",
+   "type": "Report"
+  },
+  {
+   "doc_view": "",
+   "label": "Kunde",
+   "link_to": "Customer",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Kontakt",
+   "link_to": "Contact",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Adresse",
+   "link_to": "Address",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Mitarbeiter",
+   "link_to": "Employee",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Lead",
+   "link_to": "Lead",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Projekt",
+   "link_to": "Project",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Versionshistorie",
+   "type": "URL",
+   "url": "/help-articles/vepro-app/versionshistorie"
+  },
+  {
+   "doc_view": "",
+   "label": "App-Informationen",
+   "type": "URL",
+   "url": "/help-articles/vepro-app/app-informationen"
+  },
+  {
+   "doc_view": "",
+   "label": "Anpassungen",
+   "type": "URL",
+   "url": "/help-articles/vepro-app/anpassungen"
+  },
+  {
+   "doc_view": "",
+   "label": "System Diagnostics",
+   "type": "URL",
+   "url": "/system_diagnostics"
+  },
+  {
+   "doc_view": "",
+   "label": "Einstellungen Vepro",
+   "link_to": "Einstellungen Vepro",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Lieferant",
+   "link_to": "Supplier",
+   "type": "DocType"
+  }
+ ],
+ "title": "VEPRO"
+}
