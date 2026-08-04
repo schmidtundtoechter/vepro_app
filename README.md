@@ -18,6 +18,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | `Abteilungstyp` | Stammdaten | Auswahlliste für Abteilungen; wird im DocType „Kontakt" als Link-Feld verwendet |
 | `Auswahl Position` | Stammdaten | Positionsbezeichnungen; wird im DocType „Kontakt" als Link-Feld verwendet und automatisch in das native Feld `designation` übertragen |
 | `Supportvertrag` | Stammdaten | Supportvertrags-Typen (`24/7`, `+3h`, `Standard`, `kein Supportvertrag`); wird im DocType „Kunde" als Link-Feld verwendet |
+| `Einstellungen Vepro` | Single (Einstellungen) | App-weite Einstellungen; Felder: `obergrenze_ohne_freigabe` (Currency), `untergrenze_mit_freigabe` (Currency) |
 
 #### Custom Fields
 
@@ -84,6 +85,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.37` | 2026-08-03 | Neuer Single-DocType `Einstellungen Vepro` mit Feldern `obergrenze_ohne_freigabe` und `untergrenze_mit_freigabe` (Currency); Workspace VEPRO: Shortcut „Einstellungen Vepro" unter Administration |
 | `0.0.36` | 2026-08-03 | DocTypes `Angebot`, `Auftrag`, `Ausgangsrechnung`, `Lieferschein`: Feld `scan_barcode` ausgeblendet via Property Setter `hidden: 1` |
 | `0.0.35` | 2026-07-29 | Alle 12 manuellen Property Setter sowie Custom Field `custom_lieferant` korrekt als App-Fixtures registriert (Deinstallation macht Änderungen rückgängig); DocType `Kontakt`: 5 native Felder ausgeblendet (`status`, `gender`, `sync_with_google_contacts`, `user`, `middle_name`) via Property Setter `hidden: 1` |
 | `0.0.34` | 2026-07-20 | DocType `Kontakt`: neues Custom Field `custom_lieferant` (Link → `Supplier`) nach `custom_kunde`, mit Feldbeschreibung |
