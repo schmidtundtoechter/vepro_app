@@ -160,6 +160,7 @@ doctype_js = {
 # ---------
 
 # after_migrate = []
+after_migrate = ["vepro_app.vepro_app.tasks.reload_vepro_workspace"]
 
 # Uninstallation
 # ------------
