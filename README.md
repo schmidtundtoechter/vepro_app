@@ -85,6 +85,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.38` | 2026-08-06 | DocTypes `Ausgangsrechnung`, `Angebot`, `Auftrag`: diverse Felder ausgeblendet und Feldreihenfolge via Property Setter angepasst; Custom Fields `custom_zu_haenden_von` (Angebot, Data, „zu Händen von") und `custom_column_break_jnybe` (Auftrag, Column Break) als Fixtures registriert |
 | `0.0.37` | 2026-08-03 | Neuer Single-DocType `Einstellungen Vepro` mit Feldern `obergrenze_ohne_freigabe` und `untergrenze_mit_freigabe` (Currency); Workspace VEPRO: Shortcut „Einstellungen Vepro" unter Administration |
 | `0.0.36` | 2026-08-03 | DocTypes `Angebot`, `Auftrag`, `Ausgangsrechnung`, `Lieferschein`: Feld `scan_barcode` ausgeblendet via Property Setter `hidden: 1` |
 | `0.0.35` | 2026-07-29 | Alle 12 manuellen Property Setter sowie Custom Field `custom_lieferant` korrekt als App-Fixtures registriert (Deinstallation macht Änderungen rückgängig); DocType `Kontakt`: 5 native Felder ausgeblendet (`status`, `gender`, `sync_with_google_contacts`, `user`, `middle_name`) via Property Setter `hidden: 1` |

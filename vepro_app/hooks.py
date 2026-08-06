@@ -32,6 +32,8 @@ fixtures = [
 				"custom_bemerkungen",
 				"custom_auswahl_position",
 				"custom_lieferant",
+				"custom_zu_haenden_von",
+				"custom_column_break_jnybe",
 			]],
 		],
 	},
@@ -56,6 +58,25 @@ fixtures = [
 				"Sales Order-scan_barcode-hidden",
 				"Sales Invoice-scan_barcode-hidden",
 				"Delivery Note-scan_barcode-hidden",
+				"Sales Invoice-loyalty_points_redemption-hidden",
+				"Sales Invoice-main-field_order",
+				"Sales Invoice-section_break2-hidden",
+				"Sales Invoice-cost_center-hidden",
+				"Sales Invoice-accounting_dimensions_section-collapsible",
+				"Quotation-disable_rounded_total-hidden",
+				"Quotation-in_words-hidden",
+				"Quotation-lost_reasons_section-hidden",
+				"Quotation-main-field_order",
+				"Quotation-contact_person-hidden",
+				"Quotation-company_address_section-hidden",
+				"Sales Order-section_break1-hidden",
+				"Sales Order-col_break46-hidden",
+				"Sales Order-dispatch_address_name-hidden",
+				"Sales Order-last_scanned_warehouse-hidden",
+				"Sales Order-sec_warehouse-hidden",
+				"Sales Order-main-field_order",
+				"Sales Order-cost_center-hidden",
+				"Sales Order-accounting_dimensions_section-collapsible",
 			]],
 		],
 	},
@@ -160,6 +181,7 @@ doctype_js = {
 # ---------
 
 # after_migrate = []
+after_migrate = ["vepro_app.vepro_app.tasks.reload_vepro_workspace"]
 
 # Uninstallation
 # ------------
