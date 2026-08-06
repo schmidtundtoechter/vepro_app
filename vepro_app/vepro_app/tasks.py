@@ -36,3 +36,34 @@ def sync_kontakt_kunde():
 	frappe.logger().info(
 		f"sync_kontakt_kunde: {updated} von {len(kontakte)} Kontakten aktualisiert."
 	)
+
+
+def reload_vepro_workspace():
+	"""
+	Wird nach jedem bench migrate aufgerufen.
+	Schreibt die vepro.json aus dem App-Code in die Datenbank,
+	damit Workspace-Änderungen auf bestehenden Sites automatisch übernommen werden.
+	"""
+	import json
+
+	json_path = frappe.get_app_path(
+		"vepro_app", "vepro_app", "workspace", "vepro", "vepro.json"
+	)
+
+	with open(json_path) as f:
+		doc_dict = json.load(f)
+
+	# Zeitstempel nicht überschreiben – sonst wirft Frappe TimestampMismatchError
+	doc_dict.pop("modified", None)
+	doc_dict.pop("modified_by", None)
+
+	if frappe.db.exists("Workspace", "VEPRO"):
+		doc = frappe.get_doc("Workspace", "VEPRO")
+		doc.update(doc_dict)
+		doc.flags.ignore_permissions = True
+		doc.flags.ignore_version = True
+		doc.save()
+	else:
+		frappe.get_doc(doc_dict).insert(ignore_permissions=True)
+
+	frappe.db.commit()
