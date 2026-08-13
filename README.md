@@ -85,6 +85,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.39` | 2026-08-11 | DocTypes `Angebot`, `Auftrag`, `Ausgangsrechnung`: Feld `payment_terms_template` als Pflichtfeld gesetzt (Property Setter `reqd: 1`) |
 | `0.0.38` | 2026-08-06 | DocTypes `Ausgangsrechnung`, `Angebot`, `Auftrag`: diverse Felder ausgeblendet und Feldreihenfolge via Property Setter angepasst; Custom Fields `custom_zu_haenden_von` (Angebot, Data, „zu Händen von") und `custom_column_break_jnybe` (Auftrag, Column Break) als Fixtures registriert |
 | `0.0.37` | 2026-08-03 | Neuer Single-DocType `Einstellungen Vepro` mit Feldern `obergrenze_ohne_freigabe` und `untergrenze_mit_freigabe` (Currency); Workspace VEPRO: Shortcut „Einstellungen Vepro" unter Administration |
 | `0.0.36` | 2026-08-03 | DocTypes `Angebot`, `Auftrag`, `Ausgangsrechnung`, `Lieferschein`: Feld `scan_barcode` ausgeblendet via Property Setter `hidden: 1` |
