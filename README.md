@@ -53,6 +53,18 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | `user` | via Property Setter `hidden: 1` |
 | `middle_name` | via Property Setter `hidden: 1` |
 
+**DocType: Angebot (`Quotation`)**
+
+| Feldname | Feldtyp | Position | Beschreibung |
+|---|---|---|---|
+| `custom_vor_ort` | Check | nach `valid_till` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
+
+**DocType: Auftrag (`Sales Order`)**
+
+| Feldname | Feldtyp | Position | Beschreibung |
+|---|---|---|---|
+| `custom_vor_ort` | Check | nach `delivery_date` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
+
 **DocTypes: Angebot, Auftrag, Ausgangsrechnung, Lieferschein (`Quotation`, `Sales Order`, `Sales Invoice`, `Delivery Note`)**
 
 | Feldname | Beschreibung |
@@ -69,7 +81,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Name | Beschreibung |
 |---|---|
-| `VEPRO` | Eigener Workspace im Frappe Desk; Icon `color-review-points`; Bereich **Schnellzugriff** mit Links zu `Kunde`, `Kontakt`, `Adresse`, `Mitarbeiter`, `Lead`, `Projekt`; Bereich **Hilfe** mit Links zu `App-Informationen`, `Anpassungen` und `Versionshistorie` |
+| `VEPRO` | Eigener Workspace im Frappe Desk; Icon `color-review-points`; Bereich **Schnellzugriff** mit Links zu `Kunde`, `Kontakt`, `Adresse`, `Mitarbeiter`, `Lead`, `Projekt`, `Lieferant`; Bereich **Berichte** mit Links zu „Artikelbezogene Übersicht der Verkäufe“, „Kontakte nach Kunde“, „Telefonbuch“, „Adressen nach Ort“; Bereich **Hilfe** mit Links zu `App-Informationen`, `Anpassungen` und `Versionshistorie`; Bereich **Administration** mit Links zu `System Diagnostics` und `Einstellungen Vepro` |
 
 #### Help Articles
 
@@ -85,6 +97,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.40` | 2026-08-28 | Workspace VEPRO: neuer Abschnitt **Berichte** (zwischen Schnellzugriff und Hilfe) mit Links zu „Artikelbezogene Übersicht der Verkäufe“, „Kontakte nach Kunde“, „Telefonbuch“ und „Adressen nach Ort“; „Kontakte nach Kunde“ aus Schnellzugriff entfernt; Custom Fields `custom_vor_ort` (Check, „vor Ort“) in `Angebot` nach `valid_till` und in `Auftrag` nach `delivery_date` |
 | `0.0.39` | 2026-08-11 | DocTypes `Angebot`, `Auftrag`, `Ausgangsrechnung`: Feld `payment_terms_template` als Pflichtfeld gesetzt (Property Setter `reqd: 1`) |
 | `0.0.38` | 2026-08-06 | DocTypes `Ausgangsrechnung`, `Angebot`, `Auftrag`: diverse Felder ausgeblendet und Feldreihenfolge via Property Setter angepasst; Custom Fields `custom_zu_haenden_von` (Angebot, Data, „zu Händen von") und `custom_column_break_jnybe` (Auftrag, Column Break) als Fixtures registriert |
 | `0.0.37` | 2026-08-03 | Neuer Single-DocType `Einstellungen Vepro` mit Feldern `obergrenze_ohne_freigabe` und `untergrenze_mit_freigabe` (Currency); Workspace VEPRO: Shortcut „Einstellungen Vepro" unter Administration |
