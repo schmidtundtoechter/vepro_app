@@ -57,13 +57,15 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
-| `custom_vor_ort` | Check | nach `valid_till` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
+| `custom_leistungszeitraum` | Data | nach `valid_till` | Standardwert: „Der Leistungszeitraum wird nach der Beauftragung mit dem Projektmanager individuell abgestimmt.“ |
+| `custom_vor_ort` | Check | nach `custom_leistungszeitraum` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
 
 **DocType: Auftrag (`Sales Order`)**
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
-| `custom_vor_ort` | Check | nach `delivery_date` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
+| `custom_leistungszeitraum` | Data | nach `delivery_date` | Kein Standardwert |
+| `custom_vor_ort` | Check | nach `custom_leistungszeitraum` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
 
 **DocTypes: Angebot, Auftrag, Ausgangsrechnung, Lieferschein (`Quotation`, `Sales Order`, `Sales Invoice`, `Delivery Note`)**
 
@@ -97,6 +99,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.41` | 2026-08-28 | Custom Fields `custom_leistungszeitraum` (Data, „Leistungszeitraum“) in `Angebot` nach `valid_till` (Standardwert vorausgefüllt) und in `Auftrag` nach `delivery_date` (kein Standardwert) |
 | `0.0.40` | 2026-08-28 | Workspace VEPRO: neuer Abschnitt **Berichte** (zwischen Schnellzugriff und Hilfe) mit Links zu „Artikelbezogene Übersicht der Verkäufe“, „Kontakte nach Kunde“, „Telefonbuch“ und „Adressen nach Ort“; „Kontakte nach Kunde“ aus Schnellzugriff entfernt; Custom Fields `custom_vor_ort` (Check, „vor Ort“) in `Angebot` nach `valid_till` und in `Auftrag` nach `delivery_date` |
 | `0.0.39` | 2026-08-11 | DocTypes `Angebot`, `Auftrag`, `Ausgangsrechnung`: Feld `payment_terms_template` als Pflichtfeld gesetzt (Property Setter `reqd: 1`) |
 | `0.0.38` | 2026-08-06 | DocTypes `Ausgangsrechnung`, `Angebot`, `Auftrag`: diverse Felder ausgeblendet und Feldreihenfolge via Property Setter angepasst; Custom Fields `custom_zu_haenden_von` (Angebot, Data, „zu Händen von") und `custom_column_break_jnybe` (Auftrag, Column Break) als Fixtures registriert |
