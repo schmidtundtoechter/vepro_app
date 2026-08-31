@@ -113,6 +113,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.43` | 2026-08-31 | Workspace VEPRO: absolute URLs der drei Berichte-Links (`Item-wise Sales Register`, `Telefonbuch`, `Adressen nach Ort`) auf relative Pfade umgestellt (`/app/...`) |
 | `0.0.42` | 2026-08-28 | Custom Field `custom_incoterm_benutzen` (Check, „Incoterm benutzen“) in `Angebot`, `Auftrag`, `Ausgangsrechnung`, `Lieferschein` – jeweils direkt vor `incoterm`; steuert Sichtbarkeit von `incoterm` und `named_place` via `depends_on`; Client Script setzt Standardwert „CPT“ beim Aktivieren und leert die Felder beim Deaktivieren; neue JS-Dateien `sales_order.js`, `sales_invoice.js`, `delivery_note.js` in `hooks.py` registriert |
 | `0.0.41` | 2026-08-28 | Custom Fields `custom_leistungszeitraum` (Data, „Leistungszeitraum“) in `Angebot` nach `valid_till` (Standardwert vorausgefüllt) und in `Auftrag` nach `delivery_date` (kein Standardwert) |
 | `0.0.40` | 2026-08-28 | Workspace VEPRO: neuer Abschnitt **Berichte** (zwischen Schnellzugriff und Hilfe) mit Links zu „Artikelbezogene Übersicht der Verkäufe“, „Kontakte nach Kunde“, „Telefonbuch“ und „Adressen nach Ort“; „Kontakte nach Kunde“ aus Schnellzugriff entfernt; Custom Fields `custom_vor_ort` (Check, „vor Ort“) in `Angebot` nach `valid_till` und in `Auftrag` nach `delivery_date` |
