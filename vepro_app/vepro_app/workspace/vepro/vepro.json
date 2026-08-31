@@ -108,19 +108,19 @@
    "doc_view": "",
    "label": "Artikelbezogene Übersicht der Verkäufe",
    "type": "URL",
-   "url": "https://erptest.vepro-east.de/app/query-report/Item-wise%20Sales%20Register"
+   "url": "/app/query-report/Item-wise%20Sales%20Register"
   },
   {
    "doc_view": "",
    "label": "Telefonbuch",
    "type": "URL",
-   "url": "https://erptest.vepro-east.de/app/contact/view/report/telefonbuch"
+   "url": "/app/contact/view/report/telefonbuch"
   },
   {
    "doc_view": "",
    "label": "Adressen nach Ort",
    "type": "URL",
-   "url": "https://erptest.vepro-east.de/app/query-report/Adressen%20nach%20Ort"
+   "url": "/app/query-report/Adressen%20nach%20Ort"
   }
  ],
  "title": "VEPRO"
