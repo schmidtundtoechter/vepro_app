@@ -73,6 +73,8 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
+| `custom_leistungszeitraum` | Data | nach `due_date` | Kein Standardwert |
+| `custom_vor_ort` | Check | nach `custom_leistungszeitraum` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
 | `custom_incoterm_benutzen` | Check | nach `column_break_55` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
 **DocType: Lieferschein (`Delivery Note`)**
@@ -80,6 +82,12 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
 | `custom_incoterm_benutzen` | Check | nach `column_break_39` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
+
+**DocType: Artikel (`Item`)**
+
+| Feldname | Feldtyp | Position | Beschreibung |
+|---|---|---|---|
+| `custom_art_des_artikels` | Select (Pflichtfeld) | nach `stock_uom` | Artikelart nach VEPRO-Klassifizierung; Optionen: „Investitartikel“, „Mietartikel“, „Serviceartikel“ |
 
 **DocTypes: Angebot, Auftrag, Ausgangsrechnung, Lieferschein (`Quotation`, `Sales Order`, `Sales Invoice`, `Delivery Note`)**
 
@@ -113,6 +121,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.44` | 2026-09-01 | DocType `Ausgangsrechnung`: Custom Fields `custom_leistungszeitraum` (Data) und `custom_vor_ort` (Check) nach `due_date`; DocType `Artikel`: neues Custom Field `custom_art_des_artikels` (Select, Pflichtfeld) nach `stock_uom` mit Optionen „Investitartikel“, „Mietartikel“, „Serviceartikel“ |
 | `0.0.43` | 2026-08-31 | Workspace VEPRO: absolute URLs der drei Berichte-Links (`Item-wise Sales Register`, `Telefonbuch`, `Adressen nach Ort`) auf relative Pfade umgestellt (`/app/...`) |
 | `0.0.42` | 2026-08-28 | Custom Field `custom_incoterm_benutzen` (Check, „Incoterm benutzen“) in `Angebot`, `Auftrag`, `Ausgangsrechnung`, `Lieferschein` – jeweils direkt vor `incoterm`; steuert Sichtbarkeit von `incoterm` und `named_place` via `depends_on`; Client Script setzt Standardwert „CPT“ beim Aktivieren und leert die Felder beim Deaktivieren; neue JS-Dateien `sales_order.js`, `sales_invoice.js`, `delivery_note.js` in `hooks.py` registriert |
 | `0.0.41` | 2026-08-28 | Custom Fields `custom_leistungszeitraum` (Data, „Leistungszeitraum“) in `Angebot` nach `valid_till` (Standardwert vorausgefüllt) und in `Auftrag` nach `delivery_date` (kein Standardwert) |
