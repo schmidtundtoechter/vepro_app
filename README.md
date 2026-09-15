@@ -58,7 +58,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
 | `custom_leistungszeitraum` | Data | nach `valid_till` | Standardwert: „Der Leistungszeitraum wird nach der Beauftragung mit dem Projektmanager individuell abgestimmt.“ |
-| `custom_vor_ort` | Check | nach `custom_leistungszeitraum` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
+| `custom_leistungsort` | Data | nach `custom_leistungszeitraum` | Standardwert: „Remote und vor Ort. Für den Einsatz vor Ort kommen die o.g. Nebenkosten zum Tragen.“ |
 | `custom_incoterm_benutzen` | Check | nach `column_break_34` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
 **DocType: Auftrag (`Sales Order`)**
@@ -66,7 +66,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
 | `custom_leistungszeitraum` | Data | nach `delivery_date` | Kein Standardwert |
-| `custom_vor_ort` | Check | nach `custom_leistungszeitraum` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
+| `custom_leistungsort` | Data | nach `custom_leistungszeitraum` | Kein Standardwert |
 | `custom_incoterm_benutzen` | Check | nach `column_break_49` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
 **DocType: Ausgangsrechnung (`Sales Invoice`)**
@@ -74,7 +74,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
 | `custom_leistungszeitraum` | Data | nach `due_date` | Kein Standardwert |
-| `custom_vor_ort` | Check | nach `custom_leistungszeitraum` | Leistungsort: Standard ist „im Haus“ – Kreuz gesetzt bedeutet „vor Ort“ |
+| `custom_leistungsort` | Data | nach `custom_leistungszeitraum` | Kein Standardwert |
 | `custom_incoterm_benutzen` | Check | nach `column_break_55` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
 **DocType: Lieferschein (`Delivery Note`)**
@@ -121,6 +121,8 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.46` | 2026-09-15 | DocTypes `Angebot`, `Auftrag` und `Ausgangsrechnung`: Custom Field `custom_vor_ort` in `custom_leistungsort` („Leistungsort“) umbenannt; die Logik bleibt unverändert |
+| `0.0.47` | 2026-09-15 | Doppelte Felder bereinigt: `custom_leistunsort` entfernt und vorhandene Werte nach `custom_leistungsort` übernommen |
 | `0.0.44` | 2026-09-01 | DocType `Ausgangsrechnung`: Custom Fields `custom_leistungszeitraum` (Data) und `custom_vor_ort` (Check) nach `due_date`; DocType `Artikel`: neues Custom Field `custom_art_des_artikels` (Select, Pflichtfeld) nach `stock_uom` mit Optionen „Investitartikel“, „Mietartikel“, „Serviceartikel“ |
 | `0.0.43` | 2026-08-31 | Workspace VEPRO: absolute URLs der drei Berichte-Links (`Item-wise Sales Register`, `Telefonbuch`, `Adressen nach Ort`) auf relative Pfade umgestellt (`/app/...`) |
 | `0.0.42` | 2026-08-28 | Custom Field `custom_incoterm_benutzen` (Check, „Incoterm benutzen“) in `Angebot`, `Auftrag`, `Ausgangsrechnung`, `Lieferschein` – jeweils direkt vor `incoterm`; steuert Sichtbarkeit von `incoterm` und `named_place` via `depends_on`; Client Script setzt Standardwert „CPT“ beim Aktivieren und leert die Felder beim Deaktivieren; neue JS-Dateien `sales_order.js`, `sales_invoice.js`, `delivery_note.js` in `hooks.py` registriert |
