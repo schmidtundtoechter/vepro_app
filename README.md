@@ -121,6 +121,8 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.49` | 2026-09-21 | DocType `Auftrag`: neues Custom Field `custom_zahlungsbedingung` (Small Text, „Zahlungsbedingung“) direkt unter `payment_schedule`; wird im Druckformat bei leerem Wert ausgeblendet |
+| `0.0.48` | 2026-09-21 | DocType `Angebot`: neues Custom Field `custom_zahlungsbedingung` (Small Text, „Zahlungsbedingung“) direkt unter `payment_schedule`; wird im Druckformat bei leerem Wert ausgeblendet |
 | `0.0.46` | 2026-09-15 | DocTypes `Angebot`, `Auftrag` und `Ausgangsrechnung`: Custom Field `custom_vor_ort` in `custom_leistungsort` („Leistungsort“) umbenannt; die Logik bleibt unverändert |
 | `0.0.47` | 2026-09-15 | Doppelte Felder bereinigt: `custom_leistunsort` entfernt und vorhandene Werte nach `custom_leistungsort` übernommen |
 | `0.0.44` | 2026-09-01 | DocType `Ausgangsrechnung`: Custom Fields `custom_leistungszeitraum` (Data) und `custom_vor_ort` (Check) nach `due_date`; DocType `Artikel`: neues Custom Field `custom_art_des_artikels` (Select, Pflichtfeld) nach `stock_uom` mit Optionen „Investitartikel“, „Mietartikel“, „Serviceartikel“ |
