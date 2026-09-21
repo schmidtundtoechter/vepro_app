@@ -35,6 +35,7 @@ fixtures = [
 				"custom_zu_haenden_von",
 				"custom_column_break_jnybe",
 				"custom_leistungsort",
+				"custom_zahlungsbedingung",
 			]],
 		],
 	},
