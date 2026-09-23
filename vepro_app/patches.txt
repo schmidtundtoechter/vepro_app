@@ -7,3 +7,5 @@
 vepro_app.patches.v0_0_37_reload_vepro_workspace
 vepro_app.patches.v0_0_46_rename_leistungsort_fields
 vepro_app.patches.v0_0_47_remove_duplicate_leistunsort_field
+vepro_app.patches.v0_0_49_update_versionshistorie
+vepro_app.patches.v0_0_49_cleanup_versionshistorie_newline
