@@ -609,6 +609,22 @@
  },
  {
   "default_value": null,
+  "doc_type": "Sales Invoice",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "payment_terms_template",
+  "is_system_generated": 0,
+  "modified": "2026-10-01 00:00:00",
+  "module": null,
+  "name": "Sales Invoice-payment_terms_template-no_copy",
+  "property": "no_copy",
+  "property_type": "Check",
+  "row_name": null,
+  "value": "0"
+ },
+ {
+  "default_value": null,
   "docstatus": 0,
   "doctype": "Property Setter",
   "doctype_or_field": "DocField",
