@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-10-05 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "vertreter",
+    "section_break_aktiv_status",
+  "vertretung_aktiv",
+    "column_break_aktiv_status",
+    "status",
+    "section_break_zeitraum",
+  "von",
+    "column_break_zeitraum",
+  "bis"
+ ],
+ "fields": [
+  {
+   "fieldname": "vertreter",
+   "fieldtype": "Link",
+   "idx": 1,
+   "in_list_view": 1,
+   "label": "Vertreter",
+   "options": "User",
+   "reqd": 0
+  },
+  {
+    "fieldname": "section_break_aktiv_status",
+    "fieldtype": "Section Break",
+    "idx": 2,
+    "label": null
+  },
+  {
+   "fieldname": "vertretung_aktiv",
+   "fieldtype": "Check",
+    "idx": 3,
+   "in_list_view": 1,
+    "label": "Aktivieren",
+   "reqd": 0
+  },
+  {
+    "fieldname": "column_break_aktiv_status",
+    "fieldtype": "Column Break",
+    "idx": 4,
+    "label": null
+  },
+  {
+    "default": "Vetretung nicht aktiv",
+    "fieldname": "status",
+    "fieldtype": "Data",
+    "idx": 5,
+    "label": "Status",
+    "read_only": 1,
+    "reqd": 0
+  },
+  {
+    "fieldname": "section_break_zeitraum",
+    "fieldtype": "Section Break",
+    "idx": 6,
+    "label": null
+  },
+  {
+   "fieldname": "von",
+   "fieldtype": "Date",
+    "idx": 7,
+   "label": "Von",
+   "reqd": 0
+  },
+  {
+    "fieldname": "column_break_zeitraum",
+    "fieldtype": "Column Break",
+    "idx": 8,
+    "label": null
+  },
+  {
+   "fieldname": "bis",
+   "fieldtype": "Date",
+    "idx": 9,
+   "label": "Bis",
+   "reqd": 0
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-10-05 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "vepro_app",
+ "name": "Vertretung Freigabe",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}
