@@ -121,6 +121,9 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.57` | 2026-10-06 | DocType `Vertretung Freigabe`: Rollenänderungen berücksichtigen Role Profiles und leeren den User-Cache |
+| `0.0.56` | 2026-10-06 | DocType `Vertretung Freigabe`: tägliches Server Script aktiviert Vertretungen, wenn heute inklusive innerhalb von `Von` und `Bis` liegt |
+| `0.0.55` | 2026-10-06 | DocType `Vertretung Freigabe`: tägliches Server Script aktiviert Vertretungen zum Startdatum und entzieht die Rolle nach Ablauf; Status wird aktualisiert |
 | `0.0.54` | 2026-10-05 | DocType `Vertretung Freigabe`: Check-Feld heißt „Aktivieren“; schreibgeschütztes Statusfeld mit Standardwert; Aktivieren/Status sowie Von/Bis jeweils zweispaltig angeordnet |
 | `0.0.53` | 2026-10-05 | Neuer DocType `Vertretung Freigabe` mit den Feldern `Vertreter` (Link auf User), `Vertretung aktiv`, `Von` und `Bis` |
 | `0.0.52` | 2026-10-05 | DocType `Ausgangsrechnung`: Custom Fields `custom_leistungszeitraum` und `custom_leistungsort` ausgeblendet |

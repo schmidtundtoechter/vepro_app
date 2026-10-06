@@ -47,7 +47,7 @@
     "label": null
   },
   {
-    "default": "Vetretung nicht aktiv",
+    "default": "Vertretung nicht aktiv",
     "fieldname": "status",
     "fieldtype": "Data",
     "idx": 5,
