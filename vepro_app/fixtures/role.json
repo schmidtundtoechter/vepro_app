@@ -1,0 +1,11 @@
+[
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "doctype": "Role",
+  "is_custom": 0,
+  "name": "Vepro Vertretung Freigabe",
+  "role_name": "Vepro Vertretung Freigabe",
+  "two_factor_auth": 0
+ }
+]

@@ -91,8 +91,12 @@ fixtures = [
 	},
 	# Server Scripts (geplante Aufgaben, sichtbar im Frontend)
 	{
+		"dt": "Role",
+		"filters": [["name", "=", "Vepro Vertretung Freigabe"]],
+	},
+	{
 		"dt": "Server Script",
-		"filters": [["name", "=", "Kontakt Kunde Sync"]],
+		"filters": [["name", "in", ["Kontakt Kunde Sync", "Vertretung Freigabe täglich"]]],
 	},
 	# Supportvertrag-Stammdaten
 	{

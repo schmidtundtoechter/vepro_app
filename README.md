@@ -121,6 +121,12 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.57` | 2026-10-06 | DocType `Vertretung Freigabe`: Rollenänderungen berücksichtigen Role Profiles und leeren den User-Cache |
+| `0.0.56` | 2026-10-06 | DocType `Vertretung Freigabe`: tägliches Server Script aktiviert Vertretungen, wenn heute inklusive innerhalb von `Von` und `Bis` liegt |
+| `0.0.55` | 2026-10-06 | DocType `Vertretung Freigabe`: tägliches Server Script aktiviert Vertretungen zum Startdatum und entzieht die Rolle nach Ablauf; Status wird aktualisiert |
+| `0.0.54` | 2026-10-05 | DocType `Vertretung Freigabe`: Check-Feld heißt „Aktivieren“; schreibgeschütztes Statusfeld mit Standardwert; Aktivieren/Status sowie Von/Bis jeweils zweispaltig angeordnet |
+| `0.0.53` | 2026-10-05 | Neuer DocType `Vertretung Freigabe` mit den Feldern `Vertreter` (Link auf User), `Vertretung aktiv`, `Von` und `Bis` |
+| `0.0.52` | 2026-10-05 | DocType `Ausgangsrechnung`: Custom Fields `custom_leistungszeitraum` und `custom_leistungsort` ausgeblendet |
 | `0.0.51` | 2026-10-01 | DocType `Ausgangsrechnung`: natives Feld `payment_terms_template` („Payment Terms Template“) erhält `no_copy: 0` („Keine Kopie“ ist deaktiviert) |
 | `0.0.50` | 2026-10-01 | DocType `Ausgangsrechnung`: neue Data-Felder `custom_abrechnungszeitraum` („Abrechnungszeitraum“) unter `custom_leistungsort`, `custom_betreff_freitext` („Betreff (Freitext)“) darunter und schreibgeschütztes `custom_rechnungsart` („Rechnungsart“) unter `amended_from`; Rechnungsart ist in Listenansicht, Standardfilter und globaler Suche verfügbar |
 | `0.0.49` | 2026-09-21 | DocType `Auftrag`: neues Custom Field `custom_zahlungsbedingung` (Small Text, „Zahlungsbedingung“) direkt unter `payment_schedule`; wird im Druckformat bei leerem Wert ausgeblendet |
