@@ -17,5 +17,24 @@
   "reference_doctype": null,
   "script": "# Durchsucht alle Kontakte, bei denen custom_kunde leer ist.\n# Findet den ersten verknuepften Kunden in der Dynamic-Links-Tabelle\n# und traegt ihn in das Feld custom_kunde ein.\n\nkontakte = frappe.get_all(\n\t\"Contact\",\n\tfilters={\"custom_kunde\": [\"is\", \"not set\"]},\n\tfields=[\"name\"],\n)\n\nupdated = 0\nfor row in kontakte:\n\tlinked = frappe.db.get_value(\n\t\t\"Dynamic Link\",\n\t\tfilters={\n\t\t\t\"parenttype\": \"Contact\",\n\t\t\t\"parent\": row[\"name\"],\n\t\t\t\"link_doctype\": \"Customer\",\n\t\t},\n\t\tfieldname=\"link_name\",\n\t\torder_by=\"idx asc\",\n\t)\n\n\tif linked:\n\t\tfrappe.db.set_value(\"Contact\", row[\"name\"], \"custom_kunde\", linked)\n\t\tupdated += 1\n\nfrappe.db.commit()\nfrappe.logger().info(\n\tf\"sync_kontakt_kunde: {updated} von {len(kontakte)} Kontakten aktualisiert.\"\n)\n",
   "script_type": "Scheduler Event"
+ },
+ {
+  "allow_guest": 0,
+  "api_method": null,
+  "cron_format": "0 0 * * *",
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Server Script",
+  "doctype_event": null,
+  "enable_rate_limit": 0,
+  "event_frequency": "Cron",
+  "modified": "2026-10-06 00:00:00.000000",
+  "module": null,
+  "name": "Vertretung Freigabe täglich",
+  "rate_limit_count": 0,
+  "rate_limit_seconds": 0,
+  "reference_doctype": null,
+  "script": "today = frappe.utils.today()\nactive_status = \"Vertretung ist aktiv\"\ninactive_status = \"Vertretung nicht aktiv\"\n\nactive_assignments = frappe.get_all(\n    \"Vertretung Freigabe\",\n    filters={\"von\": [\"<=\", today], \"bis\": [\">=\", today], \"vertretung_aktiv\": 1},\n    fields=[\"name\", \"vertreter\"],\n)\n\nfor assignment in active_assignments:\n    if not assignment[\"vertreter\"]:\n        continue\n\n    frappe.call(\n        \"vepro_app.api.set_vertretung_freigabe_role\",\n        user=assignment[\"vertreter\"],\n        enabled=True,\n    )\n\n    if frappe.db.get_value(\"Vertretung Freigabe\", assignment[\"name\"], \"status\") != active_status:\n        frappe.db.set_value(\"Vertretung Freigabe\", assignment[\"name\"], \"status\", active_status)\n\nexpired = frappe.get_all(\n    \"Vertretung Freigabe\",\n    filters={\"bis\": [\"<\", today]},\n    fields=[\"name\", \"vertreter\", \"status\"],\n)\n\nfor assignment in expired:\n    if assignment[\"status\"] != inactive_status:\n        frappe.db.set_value(\"Vertretung Freigabe\", assignment[\"name\"], \"status\", inactive_status)\n\n    if not assignment[\"vertreter\"]:\n        continue\n\n    current_assignments = frappe.get_all(\n        \"Vertretung Freigabe\",\n        filters={\n            \"vertreter\": assignment[\"vertreter\"],\n            \"vertretung_aktiv\": 1,\n            \"von\": [\"<=\", today],\n        },\n        fields=[\"bis\"],\n    )\n    has_current_assignment = False\n    for current_assignment in current_assignments:\n        if not current_assignment[\"bis\"] or frappe.utils.getdate(current_assignment[\"bis\"]) >= frappe.utils.getdate(today):\n            has_current_assignment = True\n            break\n\n    if has_current_assignment:\n        continue\n\n    frappe.call(\n        \"vepro_app.api.set_vertretung_freigabe_role\",\n        user=assignment[\"vertreter\"],\n        enabled=False,\n    )\n",
+  "script_type": "Scheduler Event"
  }
 ]
