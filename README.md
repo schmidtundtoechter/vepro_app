@@ -121,6 +121,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.58` | 2026-10-07 | DocType `Vertretung Freigabe`: Vertreter und Von sind Pflichtfelder; Erklärungstext rechts neben Vertreter; leeres Bis erlaubt unbefristete Aktivierung |
 | `0.0.57` | 2026-10-06 | DocType `Vertretung Freigabe`: Rollenänderungen berücksichtigen Role Profiles und leeren den User-Cache |
 | `0.0.56` | 2026-10-06 | DocType `Vertretung Freigabe`: tägliches Server Script aktiviert Vertretungen, wenn heute inklusive innerhalb von `Von` und `Bis` liegt |
 | `0.0.55` | 2026-10-06 | DocType `Vertretung Freigabe`: tägliches Server Script aktiviert Vertretungen zum Startdatum und entzieht die Rolle nach Ablauf; Status wird aktualisiert |
