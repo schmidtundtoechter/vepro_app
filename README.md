@@ -121,6 +121,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.59` | 2026-10-07 | Server Script `Vertretung Freigabe täglich`: vollständiger Rollenabgleich; Entzug auch bei gelöschten oder deaktivierten Vertretungen und Vertreterwechsel; Status aller Dokumente wird aktualisiert |
 | `0.0.58` | 2026-10-07 | DocType `Vertretung Freigabe`: Vertreter und Von sind Pflichtfelder; Erklärungstext rechts neben Vertreter; leeres Bis erlaubt unbefristete Aktivierung |
 | `0.0.57` | 2026-10-06 | DocType `Vertretung Freigabe`: Rollenänderungen berücksichtigen Role Profiles und leeren den User-Cache |
 | `0.0.56` | 2026-10-06 | DocType `Vertretung Freigabe`: tägliches Server Script aktiviert Vertretungen, wenn heute inklusive innerhalb von `Von` und `Bis` liegt |
