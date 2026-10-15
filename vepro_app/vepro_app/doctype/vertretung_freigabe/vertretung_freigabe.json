@@ -7,6 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "vertreter",
+  "column_break_erklaerung",
+  "erklaerung",
     "section_break_aktiv_status",
   "vertretung_aktiv",
     "column_break_aktiv_status",
@@ -24,18 +26,29 @@
    "in_list_view": 1,
    "label": "Vertreter",
    "options": "User",
-   "reqd": 0
+  "reqd": 1
+  },
+  {
+  "fieldname": "column_break_erklaerung",
+  "fieldtype": "Column Break",
+  "idx": 2
+  },
+  {
+  "fieldname": "erklaerung",
+  "fieldtype": "HTML",
+  "idx": 3,
+  "options": "<p>Dieser Doctype ist dazu da, ausgewählten Nutzern die Rolle &quot;Vepro Vertretung Freigabe&quot; zu geben, um die Freigabe von bestimmten Angeboten in Vertretung zu ermöglichen.</p><p>Das Feld &quot;Bis&quot; kann freigelassen werden - dies führt dazu, dass die Vertretung ab dem Datum &quot;Von&quot; bis auf weiteres aktiviert wird.</p><p>Die Auswertung dieser Vertretungs-Einstellung wird durch ein Serverskript vorgenommen, welches um 0 Uhr testet, ob es gültige Vertretungen gibt. Die Rolle &quot;Vepro Vertretung Freigabe&quot; wird dann entsprechend vergeben oder auch entzogen, wenn es keine gültigen Vertretungen mehr gibt.</p>"
   },
   {
     "fieldname": "section_break_aktiv_status",
     "fieldtype": "Section Break",
-    "idx": 2,
+    "idx": 4,
     "label": null
   },
   {
    "fieldname": "vertretung_aktiv",
    "fieldtype": "Check",
-    "idx": 3,
+    "idx": 5,
    "in_list_view": 1,
     "label": "Aktivieren",
    "reqd": 0
@@ -43,14 +56,14 @@
   {
     "fieldname": "column_break_aktiv_status",
     "fieldtype": "Column Break",
-    "idx": 4,
+    "idx": 6,
     "label": null
   },
   {
     "default": "Vertretung nicht aktiv",
     "fieldname": "status",
     "fieldtype": "Data",
-    "idx": 5,
+    "idx": 7,
     "label": "Status",
     "read_only": 1,
     "reqd": 0
@@ -58,26 +71,26 @@
   {
     "fieldname": "section_break_zeitraum",
     "fieldtype": "Section Break",
-    "idx": 6,
+    "idx": 8,
     "label": null
   },
   {
    "fieldname": "von",
    "fieldtype": "Date",
-    "idx": 7,
+    "idx": 9,
    "label": "Von",
-   "reqd": 0
+  "reqd": 1
   },
   {
     "fieldname": "column_break_zeitraum",
     "fieldtype": "Column Break",
-    "idx": 8,
+    "idx": 10,
     "label": null
   },
   {
    "fieldname": "bis",
    "fieldtype": "Date",
-    "idx": 9,
+    "idx": 11,
    "label": "Bis",
    "reqd": 0
   }

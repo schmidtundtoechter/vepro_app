@@ -86,6 +86,11 @@ fixtures = [
 				"Sales Order-cost_center-hidden",
 				"Sales Order-accounting_dimensions_section-collapsible",
 				"Sales Invoice-payment_terms_template-no_copy",
+				"Quotation-customer_address-reqd",
+				"Sales Order-customer_address-reqd",
+				"Sales Invoice-customer_address-reqd",
+				"Delivery Note-customer_address-reqd",
+				"Purchase Order-supplier_address-reqd",
 			]],
 		],
 	},
@@ -343,4 +348,3 @@ override_whitelisted_methods = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
