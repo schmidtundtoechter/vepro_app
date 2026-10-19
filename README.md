@@ -86,6 +86,12 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 |---|---|---|---|
 | `custom_incoterm_benutzen` | Check | nach `column_break_39` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
+**DocType: Lieferantenauftrag (`Purchase Order`)**
+
+| Feldname | Feldtyp | Position | Beschreibung |
+|---|---|---|---|
+| `custom_anmerkung` | Data | direkt nach `schedule_date` | Anmerkung |
+
 **DocType: Artikel (`Item`)**
 
 | Feldname | Feldtyp | Position | Beschreibung |
