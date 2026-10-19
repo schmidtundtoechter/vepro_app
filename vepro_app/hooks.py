@@ -42,6 +42,8 @@ fixtures = [
 				"custom_abrechnungszeitraum",
 				"custom_betreff_freitext",
 				"custom_rechnungsart",
+				"custom_ansprechperson_bei_vepro_east",
+				"custom_beschreibung",
 			]],
 		],
 	},
