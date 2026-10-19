@@ -58,6 +58,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
 | `custom_leistungszeitraum` | Data | nach `valid_till` | Standardwert: „Der Leistungszeitraum wird nach der Beauftragung mit dem Projektmanager individuell abgestimmt.“ |
+| `custom_beschreibung` | Data | nach `custom_ansprechperson_bei_vepro_east` | Beschreibung |
 | `custom_leistungsort` | Data | nach `custom_leistungszeitraum` | Standardwert: „Remote und vor Ort. Für den Einsatz vor Ort kommen die o.g. Nebenkosten zum Tragen.“ |
 | `custom_incoterm_benutzen` | Check | nach `column_break_34` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
@@ -66,6 +67,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
 | `custom_leistungszeitraum` | Data | nach `delivery_date` | Kein Standardwert |
+| `custom_beschreibung` | Data | nach `custom_ansprechperson_bei_vepro_east` | Beschreibung |
 | `custom_leistungsort` | Data | nach `custom_leistungszeitraum` | Kein Standardwert |
 | `custom_incoterm_benutzen` | Check | nach `column_break_49` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
@@ -74,6 +76,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
 | `custom_leistungszeitraum` | Data | nach `due_date` | Kein Standardwert |
+| `custom_beschreibung` | Data | nach `custom_ansprechperson_bei_vepro_east` | Beschreibung |
 | `custom_leistungsort` | Data | nach `custom_leistungszeitraum` | Kein Standardwert |
 | `custom_incoterm_benutzen` | Check | nach `column_break_55` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
@@ -121,6 +124,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.64` | 2026-10-19 | DocTypes `Angebot`, `Auftrag` und `Ausgangsrechnung`: neues optionales Datenfeld `custom_beschreibung` („Beschreibung“) direkt nach `custom_ansprechperson_bei_vepro_east`; beide Felder sind im Fixture-Export registriert |
 | `0.0.59` | 2026-10-07 | Server Script `Vertretung Freigabe täglich`: vollständiger Rollenabgleich; Entzug auch bei gelöschten oder deaktivierten Vertretungen und Vertreterwechsel; Status aller Dokumente wird aktualisiert |
 | `0.0.58` | 2026-10-07 | DocType `Vertretung Freigabe`: Vertreter und Von sind Pflichtfelder; Erklärungstext rechts neben Vertreter; leeres Bis erlaubt unbefristete Aktivierung |
 | `0.0.57` | 2026-10-06 | DocType `Vertretung Freigabe`: Rollenänderungen berücksichtigen Role Profiles und leeren den User-Cache |
