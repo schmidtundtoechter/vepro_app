@@ -830,5 +830,53 @@
   "property": "depends_on",
   "property_type": "Code",
   "value": "eval:doc.custom_incoterm_benutzen"
+ },
+ {
+  "default_value": null,
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "is_system_generated": 0,
+  "modified": "2026-10-07 11:46:40.221453",
+  "module": null,
+  "row_name": null,
+  "doc_type": "Timesheet",
+  "field_name": "currency",
+  "name": "Timesheet-currency-hidden",
+  "property": "hidden",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "default_value": null,
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "is_system_generated": 0,
+  "modified": "2026-10-07 11:46:40.282876",
+  "module": null,
+  "row_name": null,
+  "doc_type": "Timesheet",
+  "field_name": "exchange_rate",
+  "name": "Timesheet-exchange_rate-hidden",
+  "property": "hidden",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "default_value": null,
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocType",
+  "is_system_generated": 0,
+  "modified": "2026-10-07 11:58:05.849520",
+  "module": null,
+  "row_name": null,
+  "doc_type": "Timesheet",
+  "field_name": null,
+  "name": "Timesheet-main-field_order",
+  "property": "field_order",
+  "property_type": "Data",
+  "value": "[\"title\", \"naming_series\", \"company\", \"customer\", \"kundenname\", \"currency\", \"exchange_rate\", \"sales_invoice\", \"column_break_3\", \"status\", \"parent_project\", \"custom_verbundene_anfrage\", \"employee_detail\", \"employee\", \"employee_name\", \"department\", \"column_break_9\", \"user\", \"start_date\", \"end_date\", \"section_break_5\", \"time_logs\", \"working_hours\", \"total_hours\", \"billing_details\", \"total_billable_hours\", \"base_total_billable_amount\", \"base_total_billed_amount\", \"base_total_costing_amount\", \"column_break_10\", \"total_billed_hours\", \"total_billable_amount\", \"total_billed_amount\", \"total_costing_amount\", \"per_billed\", \"section_break_18\", \"note\", \"amended_from\"]"
  }
 ]
