@@ -27,3 +27,4 @@ vepro_app.patches.v0_0_64_update_versionshistorie
 vepro_app.patches.v0_0_65_update_versionshistorie
 vepro_app.patches.v0_0_66_update_versionshistorie
 vepro_app.patches.v0_0_67_update_versionshistorie
+vepro_app.patches.v0_0_68_update_versionshistorie
