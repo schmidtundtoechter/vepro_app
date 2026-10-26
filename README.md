@@ -57,6 +57,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
+| `custom_ansprechperson_bei_vepro_east` | Link → `User` (Pflichtfeld) | nach `amended_from` | Ansprechperson bei Vepro-East |
 | `custom_leistungszeitraum` | Data | nach `valid_till` | Standardwert: „Der Leistungszeitraum wird nach der Beauftragung mit dem Projektmanager individuell abgestimmt.“ |
 | `custom_beschreibung` | Data | nach `custom_ansprechperson_bei_vepro_east` | Beschreibung |
 | `custom_leistungsort` | Data | nach `custom_leistungszeitraum` | Standardwert: „Remote und vor Ort. Für den Einsatz vor Ort kommen die o.g. Nebenkosten zum Tragen.“ |
@@ -66,6 +67,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
+| `custom_ansprechperson_bei_vepro_east` | Link → `User` (Pflichtfeld) | nach `amended_from` | Ansprechperson bei Vepro-East |
 | `custom_leistungszeitraum` | Data | nach `delivery_date` | Kein Standardwert |
 | `custom_beschreibung` | Data | nach `custom_ansprechperson_bei_vepro_east` | Beschreibung |
 | `custom_leistungsort` | Data | nach `custom_leistungszeitraum` | Kein Standardwert |
@@ -75,6 +77,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
+| `custom_ansprechperson_bei_vepro_east` | Link → `User` (Pflichtfeld) | nach `amended_from` | Ansprechperson bei Vepro-East |
 | `custom_leistungszeitraum` | Data | nach `due_date` | Kein Standardwert |
 | `custom_beschreibung` | Data | nach `custom_ansprechperson_bei_vepro_east` | Beschreibung |
 | `custom_leistungsort` | Data | nach `custom_leistungszeitraum` | Kein Standardwert |
@@ -84,12 +87,14 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
+| `custom_ansprechperson_bei_vepro_east` | Link → `User` (Pflichtfeld) | nach `is_return` | Ansprechperson bei Vepro-East |
 | `custom_incoterm_benutzen` | Check | nach `column_break_39` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
 **DocType: Lieferantenauftrag (`Purchase Order`)**
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
+| `custom_ansprechperson_bei_vepro_east` | Link → `User` (Pflichtfeld) | nach `has_unit_price_items` | Ansprechperson bei Vepro-East |
 | `custom_anmerkung` | Data | direkt nach `schedule_date` | Anmerkung |
 
 **DocType: Artikel (`Item`)**
@@ -154,6 +159,7 @@ Die nativen Felder `currency` und `exchange_rate` sind ausgeblendet. Die Feldrei
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.68` | 2026-10-26 | DocTypes `Bestellung` (`Purchase Order`) und `Lieferschein` (`Delivery Note`): Pflichtfeld `custom_ansprechperson_bei_vepro_east` (Link auf `User`) nach `has_unit_price_items` bzw. `is_return`; alle fünf Felder sind Pflichtfelder und im Fixture-Export registriert |
 | `0.0.67` | 2026-10-23 | DocType `Auftragsposition`: Währungsfeld `custom_gesetzter_preis` („gesetzter Preis“) nach `custom_not_included_in_total` |
 | `0.0.66` | 2026-10-23 | DocType `Auftragsposition`: neues Kontrollkästchen `custom_not_included_in_total` („nicht in Gesamtsumme aufnehmen“) nach `net_amount` |
 | `0.0.65` | 2026-10-22 | DocTypes `Timesheet`, `Artikel`, `Angebot` (Angebotsposition) und `Lieferantenauftrag`: Custom Fields `custom_verbundene_anfrage`, `custom_kundenname`, `custom_provision`, `custom_not_included_in_total`, `custom_gesetzter_preis` und `custom_anmerkung`; Timesheet-Felder `currency` und `exchange_rate` ausgeblendet und Feldreihenfolge angepasst; Beschreibungen der Angebotspositionsfelder aktualisiert |
