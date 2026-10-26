@@ -37,7 +37,7 @@
   "fieldname": "erklaerung",
   "fieldtype": "HTML",
   "idx": 3,
-  "options": "<p>Dieser Doctype ist dazu da, ausgewählten Nutzern die Rolle &quot;Vepro Vertretung Freigabe&quot; zu geben, um die Freigabe von bestimmten Angeboten in Vertretung zu ermöglichen.</p><p>Das Feld &quot;Bis&quot; kann freigelassen werden - dies führt dazu, dass die Vertretung ab dem Datum &quot;Von&quot; bis auf weiteres aktiviert wird.</p><p>Die Auswertung dieser Vertretungs-Einstellung wird durch ein Serverskript vorgenommen, welches um 0 Uhr testet, ob es gültige Vertretungen gibt. Die Rolle &quot;Vepro Vertretung Freigabe&quot; wird dann entsprechend vergeben oder auch entzogen, wenn es keine gültigen Vertretungen mehr gibt.</p>"
+  "options": "<p>Dieser Doctype ist dazu da, ausgewählten Nutzern die Rolle &quot;Vepro Vertretung Freigabe&quot; zu geben, um die Freigabe von bestimmten Angeboten in Vertretung zu ermöglichen.</p><p>Das Feld &quot;Bis&quot; kann freigelassen werden - dies führt dazu, dass die Vertretung ab dem Datum &quot;Von&quot; bis auf weiteres aktiviert wird.</p><p>Die Auswertung dieser Vertretungs-Einstellung wird nach dem Speichern und zusätzlich täglich um 0 Uhr vorgenommen. Die Rolle &quot;Vepro Vertretung Freigabe&quot; wird entsprechend vergeben oder entzogen, wenn es keine gültigen Vertretungen mehr gibt.</p>"
   },
   {
     "fieldname": "section_break_aktiv_status",
