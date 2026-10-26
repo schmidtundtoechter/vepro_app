@@ -34,7 +34,7 @@
   "rate_limit_count": 0,
   "rate_limit_seconds": 0,
   "reference_doctype": null,
-  "script": "today = frappe.utils.getdate(frappe.utils.today())\nrole_name = \"Vepro Vertretung Freigabe\"\nactive_status = \"Vertretung ist aktiv\"\ninactive_status = \"Vertretung nicht aktiv\"\n\nassignments = frappe.get_all(\n    \"Vertretung Freigabe\",\n    fields=[\"name\", \"vertreter\", \"vertretung_aktiv\", \"von\", \"bis\", \"status\"],\n)\nactive_users = set()\n\nfor assignment in assignments:\n    is_active = (\n        assignment[\"vertretung_aktiv\"]\n        and assignment[\"vertreter\"]\n        and assignment[\"von\"]\n        and frappe.utils.getdate(assignment[\"von\"]) <= today\n        and (not assignment[\"bis\"] or frappe.utils.getdate(assignment[\"bis\"]) >= today)\n    )\n    status = active_status if is_active else inactive_status\n    if assignment[\"status\"] != status:\n        frappe.db.set_value(\"Vertretung Freigabe\", assignment[\"name\"], \"status\", status)\n    if is_active:\n        active_users.add(assignment[\"vertreter\"])\n\nrole_holders = frappe.get_all(\n    \"Has Role\",\n    filters={\"parenttype\": \"User\", \"parentfield\": \"roles\", \"role\": role_name},\n    pluck=\"parent\",\n)\n\nfor user in active_users:\n    frappe.call(\n        \"vepro_app.api.set_vertretung_freigabe_role\",\n        user=user,\n        enabled=True,\n    )\n\nfor user in set(role_holders) - active_users:\n    frappe.call(\n        \"vepro_app.api.set_vertretung_freigabe_role\",\n        user=user,\n        enabled=False,\n    )\n",
+  "script": "frappe.call(\"vepro_app.api.sync_vertretung_freigabe\")\n",
   "script_type": "Scheduler Event"
  }
 ]

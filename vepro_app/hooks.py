@@ -114,6 +114,10 @@ fixtures = [
 		"dt": "Server Script",
 		"filters": [["name", "in", ["Kontakt Kunde Sync", "Vertretung Freigabe täglich"]]],
 	},
+	{
+		"dt": "Client Script",
+		"filters": [["name", "=", "Vertretung Freigabe sofort synchronisieren"]],
+	},
 	# Supportvertrag-Stammdaten
 	{
 		"dt": "Supportvertrag",

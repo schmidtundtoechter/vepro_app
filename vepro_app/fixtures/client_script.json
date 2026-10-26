@@ -1,0 +1,11 @@
+[
+ {
+  "doctype": "Client Script",
+  "dt": "Vertretung Freigabe",
+  "enabled": 1,
+  "module": "vepro_app",
+  "name": "Vertretung Freigabe sofort synchronisieren",
+  "script": "frappe.ui.form.on(\"Vertretung Freigabe\", {\n\tafter_save(frm) {\n\t\tfrappe.call(\"vepro_app.api.sync_vertretung_freigabe\");\n\t},\n});\n",
+  "view": "Form"
+ }
+]
