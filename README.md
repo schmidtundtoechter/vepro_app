@@ -115,6 +115,13 @@ Die nativen Felder `currency` und `exchange_rate` sind ausgeblendet. Die Feldrei
 | `custom_not_included_in_total` | Check | nach `item_tax_template` | „nicht in Gesamtsumme aufnehmen“; der Artikelpreis wird nicht in die Gesamtsumme eingerechnet |
 | `custom_gesetzter_preis` | Currency | nach `custom_not_included_in_total` | Frei festlegbarer Preis, der im Druckformat angezeigt werden kann |
 
+**DocType: Auftragsposition (`Sales Order Item`)**
+
+| Feldname | Feldtyp | Position | Beschreibung |
+|---|---|---|---|
+| `custom_not_included_in_total` | Check | nach `net_amount` | „nicht in Gesamtsumme aufnehmen“ |
+| `custom_gesetzter_preis` | Currency | nach `custom_not_included_in_total` | Frei festlegbarer Preis, der im Druckformat angezeigt werden kann |
+
 **DocTypes: Angebot, Auftrag, Ausgangsrechnung, Lieferschein (`Quotation`, `Sales Order`, `Sales Invoice`, `Delivery Note`)**
 
 | Feldname | Beschreibung |
@@ -147,6 +154,8 @@ Die nativen Felder `currency` und `exchange_rate` sind ausgeblendet. Die Feldrei
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.67` | 2026-10-23 | DocType `Auftragsposition`: Währungsfeld `custom_gesetzter_preis` („gesetzter Preis“) nach `custom_not_included_in_total` |
+| `0.0.66` | 2026-10-23 | DocType `Auftragsposition`: neues Kontrollkästchen `custom_not_included_in_total` („nicht in Gesamtsumme aufnehmen“) nach `net_amount` |
 | `0.0.65` | 2026-10-22 | DocTypes `Timesheet`, `Artikel`, `Angebot` (Angebotsposition) und `Lieferantenauftrag`: Custom Fields `custom_verbundene_anfrage`, `custom_kundenname`, `custom_provision`, `custom_not_included_in_total`, `custom_gesetzter_preis` und `custom_anmerkung`; Timesheet-Felder `currency` und `exchange_rate` ausgeblendet und Feldreihenfolge angepasst; Beschreibungen der Angebotspositionsfelder aktualisiert |
 | `0.0.64` | 2026-10-19 | DocTypes `Angebot`, `Auftrag` und `Ausgangsrechnung`: neues optionales Datenfeld `custom_beschreibung` („Beschreibung“) direkt nach `custom_ansprechperson_bei_vepro_east`; beide Felder sind im Fixture-Export registriert |
 | `0.0.59` | 2026-10-07 | Server Script `Vertretung Freigabe täglich`: vollständiger Rollenabgleich; Entzug auch bei gelöschten oder deaktivierten Vertretungen und Vertreterwechsel; Status aller Dokumente wird aktualisiert |

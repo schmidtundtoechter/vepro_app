@@ -1,5 +1,7 @@
 import frappe
 
+from vepro_app.patches.v0_0_66_update_versionshistorie import DESCRIPTION_SECTION
+
 
 VERSION_ROW = """<tr>
 <td style="border:1px solid #d1d8dd;padding:6px;"><strong>0.0.67</strong></td>
@@ -23,6 +25,10 @@ def execute():
 		return
 
 	article = frappe.get_doc("Help Article", "anpassungen")
-	if "<code>custom_gesetzter_preis</code>" not in article.content:
-		article.content += DESCRIPTION
+	complete_section = DESCRIPTION_SECTION + "\n" + DESCRIPTION
+	if complete_section not in article.content:
+		if DESCRIPTION_SECTION in article.content:
+			article.content = article.content.replace(DESCRIPTION_SECTION, complete_section, 1)
+		else:
+			article.content += complete_section
 		article.save(ignore_permissions=True)
