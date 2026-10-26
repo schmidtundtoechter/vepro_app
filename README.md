@@ -138,6 +138,13 @@ Die nativen Felder `currency` und `exchange_rate` sind ausgeblendet. Die Feldrei
 | Name | Typ | Zeitplan | Beschreibung |
 |---|---|---|---|
 | `Kontakt Kunde Sync` | Scheduler Event | täglich 03:00 Uhr (`0 3 * * *`) | Durchsucht alle Kontakte mit leerem Feld `custom_kunde` und trägt automatisch den ersten verknüpften Kunden aus der Dynamic-Links-Tabelle ein |
+| `Vertretung Freigabe täglich` | Scheduler Event | täglich 00:00 Uhr (`0 0 * * *`) | Gleicht Status und Rolle „Vepro Vertretung Freigabe“ anhand aller gültigen Vertretungen ab |
+
+#### Client Scripts
+
+| Name | DocType | Ereignis | Beschreibung |
+|---|---|---|---|
+| `Vertretung Freigabe sofort synchronisieren` | `Vertretung Freigabe` | nach dem Speichern (`after_save`) | Ruft denselben serverseitigen Abgleich wie das Scheduler-Script auf |
 
 #### Workspace
 
@@ -159,6 +166,7 @@ Die nativen Felder `currency` und `exchange_rate` sind ausgeblendet. Die Feldrei
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.69` | 2026-10-26 | DocType `Vertretung Freigabe`: Client Script löst nach dem Speichern denselben Status- und Rollenabgleich wie das tägliche Scheduler-Script aus; beide verwenden die gemeinsame API-Funktion `sync_vertretung_freigabe` |
 | `0.0.68` | 2026-10-26 | DocTypes `Bestellung` (`Purchase Order`) und `Lieferschein` (`Delivery Note`): Pflichtfeld `custom_ansprechperson_bei_vepro_east` (Link auf `User`) nach `has_unit_price_items` bzw. `is_return`; alle fünf Felder sind Pflichtfelder und im Fixture-Export registriert |
 | `0.0.67` | 2026-10-23 | DocType `Auftragsposition`: Währungsfeld `custom_gesetzter_preis` („gesetzter Preis“) nach `custom_not_included_in_total` |
 | `0.0.66` | 2026-10-23 | DocType `Auftragsposition`: neues Kontrollkästchen `custom_not_included_in_total` („nicht in Gesamtsumme aufnehmen“) nach `net_amount` |
