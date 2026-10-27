@@ -96,6 +96,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 |---|---|---|---|
 | `custom_ansprechperson_bei_vepro_east` | Link → `User` (Pflichtfeld) | nach `has_unit_price_items` | Ansprechperson bei Vepro-East |
 | `custom_endkunde` | Link → `Customer` | nach `custom_ansprechperson_bei_vepro_east` | Endkunde; wird im Formular und beim Speichern aus dem Drop-Ship-Feld `customer` übernommen, sofern dieses gesetzt ist. Ohne Drop-Ship-Kunden bleibt der Wert erhalten und ist manuell auswählbar. |
+| `custom_name_endkunde` | Data (schreibgeschützt) | nach `custom_endkunde` | Vollständiger Name des Endkunden; wird automatisch aus `custom_endkunde.customer_name` übernommen |
 | `custom_anmerkung` | Data | direkt nach `schedule_date` | Anmerkung |
 
 **DocType: Artikel (`Item`)**
@@ -169,6 +170,7 @@ Beide Server Scripts sind im Feld „Modul (für Export)“ dem Modul `vepro_app
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.70` | 2026-10-27 | Bestellung (`Purchase Order`): Endkundenfelder `custom_endkunde` und `custom_name_endkunde` in die App aufgenommen; automatischer Abgleich des Endkunden mit dem Drop-Ship-Kunden im Formular und beim serverseitigen Speichern; ohne Drop-Ship-Kunden bleibt die manuelle Auswahl erhalten. Vollständiger Kundenname wird automatisch übernommen. Beide Server Scripts sind dem Modul `vepro_app` zugeordnet. |
 | `0.0.69` | 2026-10-26 | DocType `Vertretung Freigabe`: Client Script löst nach dem Speichern denselben Status- und Rollenabgleich wie das tägliche Scheduler-Script aus; beide verwenden die gemeinsame API-Funktion `sync_vertretung_freigabe` |
 | `0.0.68` | 2026-10-26 | DocTypes `Bestellung` (`Purchase Order`) und `Lieferschein` (`Delivery Note`): Pflichtfeld `custom_ansprechperson_bei_vepro_east` (Link auf `User`) nach `has_unit_price_items` bzw. `is_return`; alle fünf Felder sind Pflichtfelder und im Fixture-Export registriert |
 | `0.0.67` | 2026-10-23 | DocType `Auftragsposition`: Währungsfeld `custom_gesetzter_preis` („gesetzter Preis“) nach `custom_not_included_in_total` |

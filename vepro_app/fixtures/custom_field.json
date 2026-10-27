@@ -2,6 +2,23 @@
  {
   "doctype": "Custom Field",
   "dt": "Purchase Order",
+  "fieldname": "custom_name_endkunde",
+  "fieldtype": "Data",
+  "label": "Vollständiger Name des Endkunden",
+  "name": "Purchase Order-custom_name_endkunde",
+  "module": "vepro_app",
+  "insert_after": "custom_endkunde",
+  "fetch_from": "custom_endkunde.customer_name",
+  "fetch_if_empty": 0,
+  "read_only": 1,
+  "hidden": 0,
+  "reqd": 0,
+  "translatable": 1,
+  "description": "Dieses Feld hängt von \"Endkunde\" ab und wird automatisch ausgefüllt."
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Purchase Order",
   "fieldname": "custom_endkunde",
   "fieldtype": "Link",
   "label": "Endkunde",
