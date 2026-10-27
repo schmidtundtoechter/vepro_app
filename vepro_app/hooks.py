@@ -51,6 +51,7 @@ fixtures = [
 				"custom_not_included_in_total",
 				"custom_gesetzter_preis",
 				"custom_endkunde",
+				"custom_name_endkunde",
 			]],
 		],
 	},
