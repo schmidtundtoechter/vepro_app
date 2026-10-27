@@ -50,6 +50,7 @@ fixtures = [
 				"custom_verbundene_anfrage",
 				"custom_not_included_in_total",
 				"custom_gesetzter_preis",
+				"custom_endkunde",
 			]],
 		],
 	},
@@ -172,6 +173,13 @@ doctype_js = {
 	"Sales Order":   "public/js/sales_order.js",
 	"Sales Invoice": "public/js/sales_invoice.js",
 	"Delivery Note": "public/js/delivery_note.js",
+	"Purchase Order": "public/js/purchase_order.js",
+}
+
+doc_events = {
+	"Purchase Order": {
+		"validate": "vepro_app.vepro_app.purchase_order.sync_endkunde",
+	},
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}

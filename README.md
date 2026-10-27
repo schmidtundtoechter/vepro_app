@@ -90,11 +90,12 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | `custom_ansprechperson_bei_vepro_east` | Link → `User` (Pflichtfeld) | nach `is_return` | Ansprechperson bei Vepro-East |
 | `custom_incoterm_benutzen` | Check | nach `column_break_39` (vor `incoterm`) | Steuert Sichtbarkeit von `incoterm` und `named_place`; setzt Standardwert „CPT“ beim Aktivieren |
 
-**DocType: Lieferantenauftrag (`Purchase Order`)**
+**DocType: Bestellung (`Purchase Order`)**
 
 | Feldname | Feldtyp | Position | Beschreibung |
 |---|---|---|---|
 | `custom_ansprechperson_bei_vepro_east` | Link → `User` (Pflichtfeld) | nach `has_unit_price_items` | Ansprechperson bei Vepro-East |
+| `custom_endkunde` | Link → `Customer` | nach `custom_ansprechperson_bei_vepro_east` | Endkunde; wird im Formular und beim Speichern aus dem Drop-Ship-Feld `customer` übernommen, sofern dieses gesetzt ist. Ohne Drop-Ship-Kunden bleibt der Wert erhalten und ist manuell auswählbar. |
 | `custom_anmerkung` | Data | direkt nach `schedule_date` | Anmerkung |
 
 **DocType: Artikel (`Item`)**
