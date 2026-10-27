@@ -135,6 +135,8 @@ Die nativen Felder `currency` und `exchange_rate` sind ausgeblendet. Die Feldrei
 
 #### Server Scripts
 
+Beide Server Scripts sind im Feld „Modul (für Export)“ dem Modul `vepro_app` zugeordnet.
+
 | Name | Typ | Zeitplan | Beschreibung |
 |---|---|---|---|
 | `Kontakt Kunde Sync` | Scheduler Event | täglich 03:00 Uhr (`0 3 * * *`) | Durchsucht alle Kontakte mit leerem Feld `custom_kunde` und trägt automatisch den ersten verknüpften Kunden aus der Dynamic-Links-Tabelle ein |
