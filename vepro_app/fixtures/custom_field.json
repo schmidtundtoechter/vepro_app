@@ -1,5 +1,19 @@
 [
  {
+  "doctype": "Custom Field",
+  "dt": "Purchase Order",
+  "fieldname": "custom_endkunde",
+  "fieldtype": "Link",
+  "label": "Endkunde",
+  "name": "Purchase Order-custom_endkunde",
+  "module": "vepro_app",
+  "insert_after": "custom_ansprechperson_bei_vepro_east",
+  "options": "Customer",
+  "read_only": 0,
+  "hidden": 0,
+  "reqd": 0
+ },
+ {
   "allow_in_quick_entry": 0,
   "allow_on_submit": 0,
   "bold": 0,
