@@ -878,5 +878,21 @@
   "property": "field_order",
   "property_type": "Data",
   "value": "[\"title\", \"naming_series\", \"company\", \"customer\", \"kundenname\", \"currency\", \"exchange_rate\", \"sales_invoice\", \"column_break_3\", \"status\", \"parent_project\", \"custom_verbundene_anfrage\", \"employee_detail\", \"employee\", \"employee_name\", \"department\", \"column_break_9\", \"user\", \"start_date\", \"end_date\", \"section_break_5\", \"time_logs\", \"working_hours\", \"total_hours\", \"billing_details\", \"total_billable_hours\", \"base_total_billable_amount\", \"base_total_billed_amount\", \"base_total_costing_amount\", \"column_break_10\", \"total_billed_hours\", \"total_billable_amount\", \"total_billed_amount\", \"total_costing_amount\", \"per_billed\", \"section_break_18\", \"note\", \"amended_from\"]"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Task",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "status",
+  "is_system_generated": 0,
+  "modified": "2026-11-05 12:00:00.000000",
+  "module": null,
+  "name": "Task-status-options",
+  "property": "options",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "Open\nWorking\nPending Review\nWarten auf Kunde\nOverdue\nTemplate\nCompleted\nCancelled"
  }
 ]
