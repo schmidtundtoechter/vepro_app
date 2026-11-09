@@ -19,6 +19,7 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | `Auswahl Position` | Stammdaten | Positionsbezeichnungen; wird im DocType „Kontakt" als Link-Feld verwendet und automatisch in das native Feld `designation` übertragen |
 | `Supportvertrag` | Stammdaten | Supportvertrags-Typen (`24/7`, `+3h`, `Standard`, `kein Supportvertrag`); wird im DocType „Kunde" als Link-Feld verwendet |
 | `Einstellungen Vepro` | Single (Einstellungen) | App-weite Einstellungen; Felder: `obergrenze_ohne_freigabe` (Currency), `untergrenze_mit_freigabe` (Currency) |
+| `Autoreservierung` | Reservierung | Reservierung eines Firmenwagens mit reservierendem Benutzer, Beginn/Ende, Fahrzeug, Status und Fahrtzweck; Kalender-/Gantt-Ansicht nutzt Beginn/Ende und zeigt den reservierenden Benutzer |
 
 #### Custom Fields
 
@@ -170,6 +171,7 @@ Beide Server Scripts sind im Feld „Modul (für Export)“ dem Modul `vepro_app
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.71` | 2026-11-09 | Neuer app-eigener DocType `Autoreservierung` für Firmenwagenreservierungen mit Kalender- und Gantt-Ansicht; Zeitraum aus Beginn/Ende, Titel ist der reservierende Benutzer |
 | `0.0.70` | 2026-10-27 | Bestellung (`Purchase Order`): Endkundenfelder `custom_endkunde` und `custom_name_endkunde` in die App aufgenommen; automatischer Abgleich des Endkunden mit dem Drop-Ship-Kunden im Formular und beim serverseitigen Speichern; ohne Drop-Ship-Kunden bleibt die manuelle Auswahl erhalten. Vollständiger Kundenname wird automatisch übernommen. Beide Server Scripts sind dem Modul `vepro_app` zugeordnet. |
 | `0.0.69` | 2026-10-26 | DocType `Vertretung Freigabe`: Client Script löst nach dem Speichern denselben Status- und Rollenabgleich wie das tägliche Scheduler-Script aus; beide verwenden die gemeinsame API-Funktion `sync_vertretung_freigabe` |
 | `0.0.68` | 2026-10-26 | DocTypes `Bestellung` (`Purchase Order`) und `Lieferschein` (`Delivery Note`): Pflichtfeld `custom_ansprechperson_bei_vepro_east` (Link auf `User`) nach `has_unit_price_items` bzw. `is_return`; alle fünf Felder sind Pflichtfelder und im Fixture-Export registriert |
