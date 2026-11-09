@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reserviert_von",
+  "beginn",
+  "fahrzeug",
+  "column_break_rsmj",
+  "status",
+  "ende",
+  "color",
+  "section_break_wvrf",
+  "zweck"
+ ],
+ "fields": [
+  {
+   "default": "__user",
+   "fieldname": "reserviert_von",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reserviert von",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "beginn",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Beginn",
+   "reqd": 1
+  },
+  {
+   "default": "Firmenwagen 1",
+   "fieldname": "fahrzeug",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Fahrzeug",
+   "options": "\nFirmenwagen 1\nnoch anzuschaffen",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rsmj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Reserviert",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Reserviert\nStorniert",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ende",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Ende",
+   "reqd": 1
+  },
+  {
+   "default": "#A855F7",
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "Farbe",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wvrf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "zweck",
+   "fieldtype": "Small Text",
+   "label": "Zweck der Fahrt"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 0,
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "module": "vepro_app",
+ "name": "Autoreservierung",
+ "naming_rule": "Random",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vepro Projektmanagement",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vepro Fakturierung",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vepro Technik + Support",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
