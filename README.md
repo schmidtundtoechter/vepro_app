@@ -171,6 +171,7 @@ Beide Server Scripts sind im Feld „Modul (für Export)“ dem Modul `vepro_app
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.72` | 2026-11-10 | DocTypes `Angebot`, `Auftrag` und `Ausgangsrechnung`: `payment_terms_template` ist nur bei `is_return` = 0 Pflichtfeld |
 | `0.0.71` | 2026-11-09 | Neuer app-eigener DocType `Autoreservierung` für Firmenwagenreservierungen mit Kalender- und Gantt-Ansicht; Zeitraum aus Beginn/Ende, Titel ist der reservierende Benutzer |
 | `0.0.70` | 2026-10-27 | Bestellung (`Purchase Order`): Endkundenfelder `custom_endkunde` und `custom_name_endkunde` in die App aufgenommen; automatischer Abgleich des Endkunden mit dem Drop-Ship-Kunden im Formular und beim serverseitigen Speichern; ohne Drop-Ship-Kunden bleibt die manuelle Auswahl erhalten. Vollständiger Kundenname wird automatisch übernommen. Beide Server Scripts sind dem Modul `vepro_app` zugeordnet. |
 | `0.0.69` | 2026-10-26 | DocType `Vertretung Freigabe`: Client Script löst nach dem Speichern denselben Status- und Rollenabgleich wie das tägliche Scheduler-Script aus; beide verwenden die gemeinsame API-Funktion `sync_vertretung_freigabe` |
