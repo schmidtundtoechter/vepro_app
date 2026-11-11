@@ -110,6 +110,7 @@ fixtures = [
 				"Timesheet-currency-hidden",
 				"Timesheet-exchange_rate-hidden",
 				"Timesheet-main-field_order",
+				"Task-status-options",
 			]],
 		],
 	},
