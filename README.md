@@ -171,6 +171,7 @@ Beide Server Scripts sind im Feld „Modul (für Export)“ dem Modul `vepro_app
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.73` | 2026-11-13 | Neuer DocType `Telefonnummer`: Telefonnummern werden bei Kontaktänderungen synchronisiert; Kunde, Name komplett, Abteilung, Ort und Position werden aus dem Kontakt übernommen |
 | `0.0.72` | 2026-11-10 | DocTypes `Angebot`, `Auftrag` und `Ausgangsrechnung`: `payment_terms_template` ist nur bei `is_return` = 0 Pflichtfeld |
 | `0.0.71` | 2026-11-09 | Neuer app-eigener DocType `Autoreservierung` für Firmenwagenreservierungen mit Kalender- und Gantt-Ansicht; Zeitraum aus Beginn/Ende, Titel ist der reservierende Benutzer |
 | `0.0.70` | 2026-10-27 | Bestellung (`Purchase Order`): Endkundenfelder `custom_endkunde` und `custom_name_endkunde` in die App aufgenommen; automatischer Abgleich des Endkunden mit dem Drop-Ship-Kunden im Formular und beim serverseitigen Speichern; ohne Drop-Ship-Kunden bleibt die manuelle Auswahl erhalten. Vollständiger Kundenname wird automatisch übernommen. Beide Server Scripts sind dem Modul `vepro_app` zugeordnet. |
@@ -189,7 +190,7 @@ Beide Server Scripts sind im Feld „Modul (für Export)“ dem Modul `vepro_app
 | `0.0.53` | 2026-10-05 | Neuer DocType `Vertretung Freigabe` mit den Feldern `Vertreter` (Link auf User), `Vertretung aktiv`, `Von` und `Bis` |
 | `0.0.52` | 2026-10-05 | DocType `Ausgangsrechnung`: Custom Fields `custom_leistungszeitraum` und `custom_leistungsort` ausgeblendet |
 | `0.0.51` | 2026-10-01 | DocType `Ausgangsrechnung`: natives Feld `payment_terms_template` („Payment Terms Template“) erhält `no_copy: 0` („Keine Kopie“ ist deaktiviert) |
-| `0.0.50` | 2026-10-01 | DocType `Ausgangsrechnung`: neue Data-Felder `custom_abrechnungszeitraum` („Abrechnungszeitraum“) unter `custom_leistungsort`, `custom_betreff_freitext` („Betreff (Freitext)“) darunter und schreibgeschütztes `custom_rechnungsart` („Rechnungsart“) unter `amended_from`; Rechnungsart ist in Listenansicht, Standardfilter und globaler Suche verfügbar |
+| `0.0.50` | 2026-10-01 | DocType `Ausgangsrechnung`: neue Data-Felder `custom_abrechnungszeitraum` („Leistungszeitraum“) unter `custom_leistungsort`, `custom_betreff_freitext` („Betreff (Freitext)“) darunter und schreibgeschütztes `custom_rechnungsart` („Rechnungsart“) unter `amended_from`; Rechnungsart ist in Listenansicht, Standardfilter und globaler Suche verfügbar |
 | `0.0.49` | 2026-09-21 | DocType `Auftrag`: neues Custom Field `custom_zahlungsbedingung` (Small Text, „Zahlungsbedingung“) direkt unter `payment_schedule`; wird im Druckformat bei leerem Wert ausgeblendet |
 | `0.0.48` | 2026-09-21 | DocType `Angebot`: neues Custom Field `custom_zahlungsbedingung` (Small Text, „Zahlungsbedingung“) direkt unter `payment_schedule`; wird im Druckformat bei leerem Wert ausgeblendet |
 | `0.0.46` | 2026-09-15 | DocTypes `Angebot`, `Auftrag` und `Ausgangsrechnung`: Custom Field `custom_vor_ort` in `custom_leistungsort` („Leistungsort“) umbenannt; die Logik bleibt unverändert |

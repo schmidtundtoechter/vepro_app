@@ -33,3 +33,4 @@ vepro_app.patches.v0_0_70_update_versionshistorie
 vepro_app.patches.v0_0_71_update_versionshistorie
 vepro_app.patches.rename_task_status_warten_auf_extern
 vepro_app.patches.v0_0_72_update_versionshistorie
+vepro_app.patches.v0_0_73_update_versionshistorie

@@ -188,6 +188,10 @@ doc_events = {
 	"Purchase Order": {
 		"validate": "vepro_app.vepro_app.purchase_order.sync_endkunde",
 	},
+	"Contact": {
+		"on_update": "vepro_app.vepro_app.doctype.telefonnummer.sync.sync_all_contact_phone_numbers",
+		"on_trash": "vepro_app.vepro_app.doctype.telefonnummer.sync.delete_contact_phone_numbers",
+	},
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
