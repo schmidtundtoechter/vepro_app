@@ -589,7 +589,23 @@
   "property": "reqd",
   "property_type": "Check",
   "row_name": null,
-  "value": "1"
+  "value": "0"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Quotation",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "payment_terms_template",
+  "is_system_generated": 0,
+  "modified": "2026-11-10 00:00:00",
+  "module": null,
+  "name": "Quotation-payment_terms_template-mandatory_depends_on",
+  "property": "mandatory_depends_on",
+  "property_type": "Code",
+  "row_name": null,
+  "value": "eval:!doc.is_return"
  },
  {
   "default_value": null,
@@ -605,7 +621,23 @@
   "property": "reqd",
   "property_type": "Check",
   "row_name": null,
-  "value": "1"
+  "value": "0"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Sales Order",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "payment_terms_template",
+  "is_system_generated": 0,
+  "modified": "2026-11-10 00:00:00",
+  "module": null,
+  "name": "Sales Order-payment_terms_template-mandatory_depends_on",
+  "property": "mandatory_depends_on",
+  "property_type": "Code",
+  "row_name": null,
+  "value": "eval:!doc.is_return"
  },
  {
   "default_value": null,
@@ -621,7 +653,23 @@
   "property": "reqd",
   "property_type": "Check",
   "row_name": null,
-  "value": "1"
+  "value": "0"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Sales Invoice",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "payment_terms_template",
+  "is_system_generated": 0,
+  "modified": "2026-11-10 00:00:00",
+  "module": null,
+  "name": "Sales Invoice-payment_terms_template-mandatory_depends_on",
+  "property": "mandatory_depends_on",
+  "property_type": "Code",
+  "row_name": null,
+  "value": "eval:!doc.is_return"
  },
  {
   "default_value": null,
@@ -701,6 +749,36 @@
   "property": "reqd",
   "property_type": "Check",
   "row_name": null,
+  "value": "1"
+ },
+ {
+  "default_value": null,
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "rounding_method",
+  "is_system_generated": 0,
+  "module": null,
+  "name": "System Settings-rounding_method-default",
+  "property": "default",
+  "property_type": "Text",
+  "row_name": null,
+  "doc_type": "System Settings",
+  "value": "Commercial Rounding"
+ },
+ {
+  "default_value": null,
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "is_system_generated": 0,
+  "module": null,
+  "row_name": null,
+  "doc_type": "Timesheet",
+  "field_name": "company",
+  "name": "Timesheet-company-hidden",
+  "property": "hidden",
+  "property_type": "Check",
   "value": "1"
  },
  {
@@ -878,5 +956,51 @@
   "property": "field_order",
   "property_type": "Data",
   "value": "[\"title\", \"naming_series\", \"company\", \"customer\", \"kundenname\", \"currency\", \"exchange_rate\", \"sales_invoice\", \"column_break_3\", \"status\", \"parent_project\", \"custom_verbundene_anfrage\", \"employee_detail\", \"employee\", \"employee_name\", \"department\", \"column_break_9\", \"user\", \"start_date\", \"end_date\", \"section_break_5\", \"time_logs\", \"working_hours\", \"total_hours\", \"billing_details\", \"total_billable_hours\", \"base_total_billable_amount\", \"base_total_billed_amount\", \"base_total_costing_amount\", \"column_break_10\", \"total_billed_hours\", \"total_billable_amount\", \"total_billed_amount\", \"total_costing_amount\", \"per_billed\", \"section_break_18\", \"note\", \"amended_from\"]"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Task",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "status",
+  "is_system_generated": 0,
+  "modified": "2026-11-06 12:00:00.000000",
+  "module": null,
+  "name": "Task-status-options",
+  "property": "options",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "In Vorbereitung\nOpen\nWorking\nPending Review\nWarten auf Extern\nOverdue\nTemplate\nCompleted\nCancelled"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Project",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "status",
+  "is_system_generated": 0,
+  "module": null,
+  "name": "Project-status-options",
+  "property": "options",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "Open\nIn Bearbeitung\nOn hold\nCompleted\nCancelled"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Issue",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "status",
+  "is_system_generated": 0,
+  "module": null,
+  "name": "Issue-status-options",
+  "property": "options",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "Open\nIn Bearbeitung\nReplied\nOn Hold\nResolved\nClosed"
  }
 ]
