@@ -171,6 +171,8 @@ Beide Server Scripts sind im Feld „Modul (für Export)“ dem Modul `vepro_app
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.75` | 2026-11-18 | System Settings: `rounding_method` verwendet standardmäßig „Commercial Rounding“; bestehende Einstellung wird bei der Migration angepasst |
+| `0.0.74` | 2026-11-18 | DocType `Dunning`: neues Datumsfeld `custom_stichtag` („Fälligkeits-Datum“) nach `customer_name`; Fixture-Export und Versionshistorie ergänzt |
 | `0.0.73` | 2026-11-13 | Neuer DocType `Telefonnummer`: Telefonnummern werden bei Kontaktänderungen synchronisiert; Kunde, Name komplett, Abteilung, Ort und Position werden aus dem Kontakt übernommen |
 | `0.0.72` | 2026-11-10 | DocTypes `Angebot`, `Auftrag` und `Ausgangsrechnung`: `payment_terms_template` ist nur bei `is_return` = 0 Pflichtfeld |
 | `0.0.71` | 2026-11-09 | Neuer app-eigener DocType `Autoreservierung` für Firmenwagenreservierungen mit Kalender- und Gantt-Ansicht; Zeitraum aus Beginn/Ende, Titel ist der reservierende Benutzer |

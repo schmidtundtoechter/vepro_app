@@ -1,6 +1,31 @@
 [
  {
   "doctype": "Custom Field",
+  "dt": "Dunning",
+  "fieldname": "custom_stichtag",
+  "fieldtype": "Date",
+  "label": "Fälligkeits-Datum",
+  "name": "Dunning-custom_stichtag",
+  "module": "vepro_app",
+  "insert_after": "customer_name",
+  "description": "...wird im Druckformat angezeigt...<br>\nAusstehende Beträge sollen bis zu diesem Datum gezahlt werden."
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Task",
+  "fieldname": "custom_startstatus_für_templatevorgang",
+  "fieldtype": "Select",
+  "label": "Startstatus für Templatevorgang",
+  "name": "Task-custom_startstatus_für_templatevorgang",
+  "module": "vepro_app",
+  "insert_after": "status",
+  "options": "In Vorbereitung\nOpen\nWorking\nPending Review\nWarten auf Extern\nOverdue\nTemplate\nCompleted\nCancelled",
+  "default": "Open",
+  "mandatory_depends_on": "eval:doc.is_template == 1",
+  "translatable": 1
+ },
+ {
+  "doctype": "Custom Field",
   "dt": "Purchase Order",
   "fieldname": "custom_name_endkunde",
   "fieldtype": "Data",
