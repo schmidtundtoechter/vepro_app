@@ -177,7 +177,9 @@ def sync_all_contact_phone_numbers(_doc=None, _method=None):
 	):
 		search_number = phone.get("suchnummer") or normalize_phone_number(phone.get("telefonnummer"))
 		key = (phone.get("kontakt"), search_number)
-		if not phone.get("kontakt") or not search_number:
+		if not phone.get("kontakt"):
+			continue
+		if not search_number:
 			duplicates.append(phone["name"])
 		elif key in existing_phones:
 			duplicates.append(phone["name"])

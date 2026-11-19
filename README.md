@@ -171,6 +171,7 @@ Beide Server Scripts sind im Feld „Modul (für Export)“ dem Modul `vepro_app
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.76` | 2026-11-19 | DocType `Telefonnummer`: Telefonnummern ohne verknüpften Kontakt bleiben bei der Synchronisierung erhalten; nur kontaktgebundene Einträge werden abgeglichen |
 | `0.0.75` | 2026-11-18 | System Settings: `rounding_method` verwendet standardmäßig „Commercial Rounding“; bestehende Einstellung wird bei der Migration angepasst |
 | `0.0.74` | 2026-11-18 | DocType `Dunning`: neues Datumsfeld `custom_stichtag` („Fälligkeits-Datum“) nach `customer_name`; Fixture-Export und Versionshistorie ergänzt |
 | `0.0.73` | 2026-11-13 | Neuer DocType `Telefonnummer`: Telefonnummern werden bei Kontaktänderungen synchronisiert; Kunde, Name komplett, Abteilung, Ort und Position werden aus dem Kontakt übernommen |
