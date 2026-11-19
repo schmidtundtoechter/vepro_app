@@ -32,7 +32,7 @@
    "in_standard_filter": 1,
    "label": "Kontakt",
    "options": "Contact",
-   "reqd": 1
+   "reqd": 0
   },
   {
    "fetch_from": "kontakt.custom_kunde",

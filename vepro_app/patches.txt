@@ -37,3 +37,4 @@ vepro_app.patches.v0_0_73_update_versionshistorie
 vepro_app.patches.v0_0_74_update_versionshistorie
 vepro_app.patches.set_commercial_rounding
 vepro_app.patches.v0_0_75_update_versionshistorie
+vepro_app.patches.v0_0_76_update_versionshistorie
