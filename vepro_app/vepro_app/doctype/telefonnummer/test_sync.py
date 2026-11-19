@@ -192,3 +192,27 @@ class TestContactPhoneSync(unittest.TestCase):
 
 		sync.delete_contact_phone_numbers(SimpleNamespace(name="CONTACT-1"))
 		self.assertEqual(self.telephone_rows, [])
+
+	def test_keeps_phone_numbers_without_a_contact_unchanged(self):
+		self.contacts = [Row(name="CONTACT-1", phone="111", mobile_no="")]
+		standalone_phone = Row(
+			name="STANDALONE",
+			telefonnummer="+49 30 555",
+			kontakt=None,
+			typ="Sonstiges",
+			primaernummer=0,
+			suchnummer="4930555",
+			kunde="Manual Customer",
+			name_komplett="Manual Label",
+			abteilung="Manual Department",
+			ort="Manual City",
+			position="Manual Position",
+		)
+		self.telephone_rows = [standalone_phone]
+
+		sync.sync_all_contact_phone_numbers()
+
+		self.assertIn(standalone_phone, self.telephone_rows)
+		self.assertEqual(standalone_phone["kontakt"], None)
+		self.assertEqual(standalone_phone["telefonnummer"], "+49 30 555")
+		self.assertEqual(standalone_phone["typ"], "Sonstiges")
