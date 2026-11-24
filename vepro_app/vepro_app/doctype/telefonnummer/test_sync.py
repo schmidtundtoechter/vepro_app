@@ -18,6 +18,7 @@ class TestContactPhoneSync(unittest.TestCase):
 		self.contacts = []
 		self.contact_phone_rows = []
 		self.telephone_rows = []
+		self.issue_links = []
 		self.contact_phone_table = SimpleNamespace(fieldtype="Table", options="Contact Phone")
 		self.contact_meta = SimpleNamespace(
 			fields=[
@@ -41,6 +42,9 @@ class TestContactPhoneSync(unittest.TestCase):
 				for fieldname in ("parent", "phone", "is_primary_phone", "is_primary_mobile_no")
 			]
 		)
+		self.issue_meta = SimpleNamespace(
+			fields=[SimpleNamespace(fieldname="custom_telefonnummer")]
+		)
 
 		def get_all(doctype, fields, filters=None, limit_start=0, limit_page_length=20, **kwargs):
 			del kwargs
@@ -51,6 +55,13 @@ class TestContactPhoneSync(unittest.TestCase):
 				if filters:
 					parents = filters["parent"][1]
 					rows = [row for row in rows if row["parent"] in parents]
+			elif doctype == "Issue":
+				rows = self.issue_links
+				if filters:
+					phone_names = filters["custom_telefonnummer"][1]
+					rows = [
+						row for row in rows if row["custom_telefonnummer"] in phone_names
+					]
 			else:
 				self.assertEqual(doctype, "Telefonnummer")
 				rows = self.telephone_rows
@@ -84,7 +95,10 @@ class TestContactPhoneSync(unittest.TestCase):
 			return SimpleNamespace(insert=insert_document)
 
 		self.frappe = SimpleNamespace(
-			get_meta=lambda doctype: self.contact_meta if doctype == "Contact" else self.phone_meta,
+			get_meta=lambda doctype: {
+				"Contact": self.contact_meta,
+				"Issue": self.issue_meta,
+			}.get(doctype, self.phone_meta),
 			get_all=get_all,
 			get_doc=get_doc,
 			db=SimpleNamespace(set_value=set_value),
@@ -216,3 +230,64 @@ class TestContactPhoneSync(unittest.TestCase):
 		self.assertEqual(standalone_phone["kontakt"], None)
 		self.assertEqual(standalone_phone["telefonnummer"], "+49 30 555")
 		self.assertEqual(standalone_phone["typ"], "Sonstiges")
+
+	def test_keeps_excluded_phone_unchanged_during_sync_and_contact_deletion(self):
+		self.contacts = [Row(name="CONTACT-1", phone="111", mobile_no="")]
+		excluded_phone = Row(
+			name="EXCLUDED",
+			telefonnummer="222",
+			kontakt="CONTACT-1",
+			typ="Sonstiges",
+			primaernummer=0,
+			suchnummer="222",
+			custom_prevent_synchronisation=1,
+		)
+		self.telephone_rows = [excluded_phone]
+
+		sync.sync_all_contact_phone_numbers()
+
+		self.assertIn(excluded_phone, self.telephone_rows)
+		self.assertEqual(excluded_phone["telefonnummer"], "222")
+		self.assertEqual(excluded_phone["kontakt"], "CONTACT-1")
+
+		sync.delete_contact_phone_numbers(SimpleNamespace(name="CONTACT-1"))
+		self.assertIn(excluded_phone, self.telephone_rows)
+
+	def test_keeps_issue_linked_phone_when_it_is_stale(self):
+		self.contacts = [Row(name="CONTACT-1", phone="111", mobile_no="")]
+		linked_phone = Row(
+			name="LINKED",
+			telefonnummer="222",
+			kontakt="CONTACT-1",
+			typ="Telefon",
+			primaernummer=1,
+			suchnummer="222",
+			custom_prevent_synchronisation=0,
+		)
+		self.telephone_rows = [linked_phone]
+		self.issue_links = [Row(custom_telefonnummer="LINKED")]
+
+		sync.sync_all_contact_phone_numbers()
+
+		self.assertIn(linked_phone, self.telephone_rows)
+		self.assertEqual(linked_phone["telefonnummer"], "222")
+		self.assertEqual(linked_phone["kontakt"], "CONTACT-1")
+
+	def test_unlinks_issue_linked_phone_instead_of_deleting_with_contact(self):
+		self.contacts = [Row(name="CONTACT-1", phone="111", mobile_no="")]
+		linked_phone = Row(
+			name="LINKED",
+			telefonnummer="111",
+			kontakt="CONTACT-1",
+			typ="Telefon",
+			primaernummer=1,
+			suchnummer="111",
+			custom_prevent_synchronisation=0,
+		)
+		self.telephone_rows = [linked_phone]
+		self.issue_links = [Row(custom_telefonnummer="LINKED")]
+
+		sync.delete_contact_phone_numbers(SimpleNamespace(name="CONTACT-1"))
+
+		self.assertIn(linked_phone, self.telephone_rows)
+		self.assertIsNone(linked_phone["kontakt"])

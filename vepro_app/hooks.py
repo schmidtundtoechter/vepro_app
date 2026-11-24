@@ -121,6 +121,7 @@ fixtures = [
 				"Issue-status-options",
 				"Issue-raised_by-hidden",
 				"Issue-customer-fetch_from",
+				"Issue-main-quick_entry",
 				"System Settings-rounding_method-default",
 			]],
 		],

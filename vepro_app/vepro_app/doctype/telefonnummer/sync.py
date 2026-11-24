@@ -22,6 +22,30 @@ def _get_all_rows(doctype, fields, filters=None, order_by="name asc"):
 		start += len(rows)
 
 
+def _get_issue_linked_phone_names(phone_names):
+	if not phone_names:
+		return set()
+
+	issue_fieldnames = {field.fieldname for field in frappe.get_meta("Issue").fields}
+	if "custom_telefonnummer" not in issue_fieldnames:
+		return set()
+
+	linked_names = set()
+	phone_names = list(phone_names)
+	for start in range(0, len(phone_names), PAGE_SIZE):
+		batch = phone_names[start : start + PAGE_SIZE]
+		linked_names.update(
+			row.custom_telefonnummer
+			for row in _get_all_rows(
+				"Issue",
+				["custom_telefonnummer"],
+				filters={"custom_telefonnummer": ["in", batch]},
+			)
+			if row.custom_telefonnummer
+		)
+	return linked_names
+
+
 def _add_phone(phones, contact, number, phone_type, primary, contact_details):
 	phone_number = (number or "").strip()
 	search_number = normalize_phone_number(phone_number)
@@ -172,9 +196,12 @@ def sync_all_contact_phone_numbers(_doc=None, _method=None):
 			"position",
 			"typ",
 			"primaernummer",
+			"custom_prevent_synchronisation",
 			"suchnummer",
 		],
 	):
+		if phone.get("custom_prevent_synchronisation"):
+			continue
 		search_number = phone.get("suchnummer") or normalize_phone_number(phone.get("telefonnummer"))
 		key = (phone.get("kontakt"), search_number)
 		if not phone.get("kontakt"):
@@ -204,10 +231,13 @@ def sync_all_contact_phone_numbers(_doc=None, _method=None):
 				changes,
 			)
 
-	for phone in existing_phones.values():
-		frappe.delete_doc("Telefonnummer", phone["name"], ignore_permissions=True)
-	for name in duplicates:
-		frappe.delete_doc("Telefonnummer", name, ignore_permissions=True)
+	phones_to_delete = list(existing_phones.values()) + [{"name": name} for name in duplicates]
+	issue_linked_phone_names = _get_issue_linked_phone_names(
+		phone["name"] for phone in phones_to_delete
+	)
+	for phone in phones_to_delete:
+		if phone["name"] not in issue_linked_phone_names:
+			frappe.delete_doc("Telefonnummer", phone["name"], ignore_permissions=True)
 
 
 def delete_contact_phone_numbers(doc, _method=None):
@@ -215,9 +245,15 @@ def delete_contact_phone_numbers(doc, _method=None):
 	phone_records = list(
 		_get_all_rows(
 			"Telefonnummer",
-			["name"],
+			["name", "kontakt", "custom_prevent_synchronisation"],
 			filters={"kontakt": doc.name},
 		)
 	)
+	issue_linked_phone_names = _get_issue_linked_phone_names(
+		phone["name"] for phone in phone_records
+	)
 	for phone in phone_records:
-		frappe.delete_doc("Telefonnummer", phone["name"], ignore_permissions=True)
+		if phone["name"] in issue_linked_phone_names or phone.get("custom_prevent_synchronisation"):
+			frappe.db.set_value("Telefonnummer", phone["name"], "kontakt", None)
+		else:
+			frappe.delete_doc("Telefonnummer", phone["name"], ignore_permissions=True)
