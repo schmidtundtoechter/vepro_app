@@ -42,6 +42,24 @@ develop:   Code im Zwischenstadium befindet sich hier oder im passenden Feature 
 | `custom_lieferant` | Link → `Supplier` | nach `custom_kunde` | Zugeordneter Lieferant |
 | `custom_bemerkungen` | Small Text | Zeile 21 | Freitext-Bemerkungen |
 
+**DocType: Anfrage (`Issue`)**
+
+| Feldname | Feldtyp | Position | Beschreibung |
+|---|---|---|---|
+| `custom_produktkategorie` | Link → `Item Group` | nach `issue_split_from` | Produktkategorie |
+| `custom_radiobutton_dlas` | Check | nach `custom_produktkategorie` | Radiobutton DLAS; unabhängiges Checkfeld |
+| `custom_radiobutton_bereitschaft` | Check | nach `custom_radiobutton_dlas` | Radiobutton Bereitschaft; unabhängiges Checkfeld |
+| `custom_column_break_tcakl` | Column Break | nach `description` | Spaltenumbruch ohne Beschriftung |
+| `custom_lösung` | Text Editor | nach `custom_column_break_tcakl` | Lösung neben der Beschreibung; fette Beschriftung und globale Suche aktiviert; ergänzt `resolution_details` |
+
+Alle neuen Eingabefelder sind optional. Die Priorität (`priority`) erhält den Standardwert „Mittel“.
+Die nativen Felder `naming_series`, `issue_type`, `issue_split_from`, `email_account`, `company` und `via_customer_portal` sind per Property Setter ausgeblendet.
+Die Anpassungen werden beim Installieren bzw. Migrieren über Fixtures übernommen.
+
+**DocType: Telefonnummer**
+
+Das Checkfeld `custom_prevent_synchronisation` schützt Telefonnummern vor Änderungen und Löschung durch den Kontaktabgleich. Auch mit Anfragen verknüpfte Telefonnummern werden beim Abgleich nicht gelöscht. Beim Löschen des zugehörigen Kontakts bleiben geschützte Telefonnummern erhalten; ihre Kontaktverknüpfung wird entfernt.
+
 #### Ausgeblendete native Felder
 
 **DocType: Kontakt (`Contact`)**
@@ -171,6 +189,7 @@ Beide Server Scripts sind im Feld „Modul (für Export)“ dem Modul `vepro_app
 
 | Version | Datum | Änderungen |
 |---|---|---|
+| `0.0.77` | 2026-11-25 | Anfrage: Produktkategorie, Checkfelder für DLAS und Bereitschaft sowie Lösungsfeld ergänzt; Priorität standardmäßig „Mittel“, weitere Felder ausgeblendet. Telefonnummer: Synchronisierungsausschluss und Schutz von mit Anfragen verknüpften Nummern vor dem Löschen. |
 | `0.0.76` | 2026-11-19 | DocType `Telefonnummer`: Telefonnummern ohne verknüpften Kontakt bleiben bei der Synchronisierung erhalten; nur kontaktgebundene Einträge werden abgeglichen |
 | `0.0.75` | 2026-11-18 | System Settings: `rounding_method` verwendet standardmäßig „Commercial Rounding“; bestehende Einstellung wird bei der Migration angepasst |
 | `0.0.74` | 2026-11-18 | DocType `Dunning`: neues Datumsfeld `custom_stichtag` („Fälligkeits-Datum“) nach `customer_name`; Fixture-Export und Versionshistorie ergänzt |
