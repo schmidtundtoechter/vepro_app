@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "telefonnummer",
+  "custom_prevent_synchronisation",
   "kontakt",
   "kunde",
   "name_komplett",
@@ -93,6 +94,13 @@
    "fieldtype": "Check",
    "in_standard_filter": 1,
    "label": "Primärnummer"
+  },
+  {
+   "default": "0",
+   "description": "Wenn dieses Feld angekreuzt ist, wird die Telefonnummer von der Synchronisierung mit Kontakten ausgeschlossen. Sie wird also z. B. nicht gelöscht, falls es keinen Kontakt mit dieser Nummer gibt.",
+   "fieldname": "custom_prevent_synchronisation",
+   "fieldtype": "Check",
+   "label": "Telefonnummer nicht mit Kontakten synchronisieren"
   },
   {
    "fieldname": "suchnummer",
